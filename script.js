@@ -62,7 +62,11 @@ verifyBtn.addEventListener("click", () => {
 
     if (otpInput.value === "123456") {
 
-        alert("✅ Login Successful");
+        showPopup(
+"✅",
+"Login Successful",
+"Welcome to Safety Bubble"
+);
         showScreen(home);
 
     } else {
@@ -78,7 +82,11 @@ document.addEventListener("click", (e) => {
 
     if (e.target.id === "sosButton") {
 
-        alert("🚨 Emergency SOS Activated (Demo)");
+       showPopup(
+"🛡️",
+"Safety Bubble Activated",
+"You are never alone."
+); 
 
     }
 
