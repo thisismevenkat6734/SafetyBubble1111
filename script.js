@@ -23,7 +23,23 @@ function showScreen(screen){
 
     screen.classList.remove("hidden");
 }
+function showPopup(icon,title,message){
 
+document.getElementById("popup").classList.remove("hidden");
+
+document.getElementById("popupIcon").innerHTML=icon;
+
+document.getElementById("popupTitle").innerHTML=title;
+
+document.getElementById("popupMessage").innerHTML=message;
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").classList.add("hidden");
+
+}
 // Splash → Welcome
 setTimeout(() => {
     showScreen(welcome);
