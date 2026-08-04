@@ -4,160 +4,85 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Safety Bubble | You're Never Alone</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#6a11cb">
+<title>
+Safety Bubble | You're Never Alone
+</title>
 
-<link rel="stylesheet" href="style.css">
+<meta
+name="theme-color"
+content="#6A11CB">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta
+name="description"
+content="Safety Bubble Women's Safety Platform">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta
+name="keywords"
+content="Women Safety, Emergency, SOS, Safety Bubble">
+
+<meta
+name="author"
+content="Venkat Rao">
+
+<link
+rel="stylesheet"
+href="style.css">
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
-<!-- Premium Popup -->
 
-<div id="popup" class="popup hidden">
-
-<div class="popup-box">
-
-<div id="popupIcon">✅</div>
-
-<h2 id="popupTitle">Success</h2>
-
-<p id="popupMessage">Completed Successfully</p>
-
-<button onclick="closePopup()">
-
-OK
-
-</button>
-
-</div>
-
-</div>
 <body>
 
-<div id="particles"></div>
+<!-- ========================================= -->
+<!-- LOADING SCREEN -->
+<!-- ========================================= -->
 
-<!-- SPLASH -->
+<section id="loadingScreen">
 
-<section id="splash">
+<div class="loadingContainer">
 
-<div class="logo-circle">
+<div class="logoContainer">
+
+<div class="ring ring1"></div>
+
+<div class="ring ring2"></div>
+
+<div class="ring ring3"></div>
+
+<div class="mainLogo">
 
 <i class="fa-solid fa-shield-heart"></i>
 
 </div>
 
-<h1>Safety Bubble</h1>
-
-<p>You're Never Alone</p>
-
-</section>
-
-<!-- WELCOME -->
-
-<section id="welcome" class="hidden">
-
-<div class="glass">
-
-<h2>Welcome</h2>
-
-<h3>Safety Starts With You</h3>
-
-<p class="quote">
-
-"Your courage is stronger than your fear."
-
-</p>
-
-<button id="startBtn">
-
-Get Started
-
-</button>
-
 </div>
 
-</section>
+<h1>
 
-<!-- REGISTER -->
+Safety Bubble
 
-<section id="register" class="hidden">
-
-<div class="glass form-card">
-
-<h2>Create Account</h2>
-
-<input type="text" placeholder="Full Name">
-
-<input type="tel" placeholder="Mobile Number">
-
-<input type="text" placeholder="Country">
-
-<input type="text" placeholder="State">
-
-<input type="text" placeholder="District">
-
-<input type="text" placeholder="Mandal / Taluk">
-
-<input type="text" placeholder="City / Village">
-
-<textarea placeholder="House Full Address"></textarea>
-
-<button id="continueBtn">
-
-Continue
-
-</button>
-
-</div>
-
-</section>
-
-<!-- OTP -->
-
-<section id="otp" class="hidden">
-
-<div class="glass">
-
-<h2>OTP Verification</h2>
-
-<p>
-
-Demo OTP : <b>123456</b>
-
-</p>
-
-<input
-type="number"
-placeholder="Enter OTP">
-
-<button id="verifyBtn">
-
-Verify
-
-</button>
-
-</div>
-
-</section>
-
-<!-- HOME -->
-
-<section id="home" class="hidden">
-
-<div class="glass home-card">
-
-<h2>
-
-🛡 Safety Bubble
-
-</h2>
+</h1>
 
 <h3>
 
@@ -165,59 +90,557 @@ You're Never Alone
 
 </h3>
 
-<p class="quote">
+<p>
 
-"Safety is not a privilege.
-
-It is your right."
+Protect • Prevent • Respond
 
 </p>
-
-<div class="menu">
-
-<div class="item">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<span>Live Location</span>
-
-</div>
-
-<div class="item">
-
-<i class="fa-solid fa-user-group"></i>
-
-<span>Trusted Contacts</span>
-
-</div>
-
-<div class="item">
-
-<i class="fa-solid fa-phone"></i>
-
-<span>Emergency</span>
-
-</div>
-
-<div class="item">
-
-<i class="fa-solid fa-map"></i>
-
-<span>Safe Places</span>
-
-</div>
-
-</div>
-
-<button id="sosButton">
-
-SOS
-
-</button>
 
 </div>
 
 </section>
+
+<!-- ========================================= -->
+<!-- WELCOME SCREEN STARTS -->
+<!-- ========================================= -->
+
+<section
+id="welcomeScreen"
+class="hideScreen">
+  <!-- ========================================= -->
+<!-- WELCOME CONTENT -->
+<!-- ========================================= -->
+
+<div class="welcomeWrapper">
+
+    <div class="welcomeTop">
+
+        <div class="welcomeIcon">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+        </div>
+
+        <h1>
+            Welcome to
+            <span>Safety Bubble</span>
+        </h1>
+
+        <h3>
+            You're Never Alone
+        </h3>
+
+    </div>
+
+    <div class="quoteCard">
+
+        <p id="quoteText">
+
+            "Every woman deserves to feel safe,
+            confident and protected."
+
+        </p>
+
+    </div>
+
+    <div class="welcomeImage">
+
+        <img
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700"
+        alt="Women's Safety">
+
+    </div>
+
+    <button
+    id="startButton">
+
+        Get Started
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- REGISTRATION SCREEN STARTS -->
+<!-- ========================================= -->
+
+<section
+id="registrationScreen"
+class="hideScreen">
+  <!-- ========================================= -->
+<!-- REGISTRATION FORM -->
+<!-- ========================================= -->
+
+<div class="registerWrapper">
+
+    <div class="registerHeader">
+
+        <h1>Create Account</h1>
+
+        <p>
+
+            Your safety begins with one simple step.
+
+        </p>
+
+    </div>
+
+    <form id="registrationForm">
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-user"></i>
+
+            <input
+            type="text"
+            id="fullName"
+            placeholder="Full Name"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <input
+            type="tel"
+            id="mobileNumber"
+            placeholder="Mobile Number"
+            maxlength="10"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-earth-asia"></i>
+
+            <input
+            type="text"
+            id="country"
+            placeholder="Country"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <input
+            type="text"
+            id="state"
+            placeholder="State"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-building"></i>
+
+            <input
+            type="text"
+            id="district"
+            placeholder="District"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-map-location-dot"></i>
+
+            <input
+            type="text"
+            id="mandal"
+            placeholder="Mandal / Taluk"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-city"></i>
+
+            <input
+            type="text"
+            id="city"
+            placeholder="City / Village"
+            required>
+
+        </div>
+
+        <div class="inputBox">
+
+            <i class="fa-solid fa-house"></i>
+
+            <textarea
+            id="address"
+            placeholder="House Full Address"
+            rows="4"
+            required></textarea>
+
+        </div>
+
+        <button
+        type="button"
+        id="continueButton">
+
+            Continue
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- OTP SCREEN STARTS -->
+<!-- ========================================= -->
+
+<section
+id="otpScreen"
+class="hideScreen">
+  <!-- ========================================= -->
+<!-- OTP VERIFICATION -->
+<!-- ========================================= -->
+
+<div class="otpWrapper">
+
+    <div class="otpHeader">
+
+        <div class="otpIcon">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+        </div>
+
+        <h1>
+
+            Verify Mobile Number
+
+        </h1>
+
+        <p>
+
+            Enter the verification code to continue.
+
+        </p>
+
+    </div>
+
+    <div class="otpCard">
+
+        <div class="otpInputBox">
+
+            <input
+            type="text"
+            id="otp1"
+            maxlength="1">
+
+            <input
+            type="text"
+            id="otp2"
+            maxlength="1">
+
+            <input
+            type="text"
+            id="otp3"
+            maxlength="1">
+
+            <input
+            type="text"
+            id="otp4"
+            maxlength="1">
+
+            <input
+            type="text"
+            id="otp5"
+            maxlength="1">
+
+            <input
+            type="text"
+            id="otp6"
+            maxlength="1">
+
+        </div>
+
+        <p class="otpInfo">
+
+            Enter the 6-digit verification code.
+
+        </p>
+
+        <button
+        id="verifyOtpButton">
+
+            Verify & Continue
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- HOME DASHBOARD STARTS -->
+<!-- ========================================= -->
+
+<section
+id="homeScreen"
+class="hideScreen">
+  <!-- ========================================= -->
+<!-- HOME DASHBOARD -->
+<!-- ========================================= -->
+
+<div class="homeWrapper">
+
+    <!-- TOP HEADER -->
+
+    <header class="homeHeader">
+
+        <div class="profileArea">
+
+            <div class="profileImage">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="userName">
+
+                    Welcome
+
+                </h2>
+
+                <p>
+
+                    Stay Safe • Stay Strong
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <button id="notificationButton">
+
+            <i class="fa-solid fa-bell"></i>
+
+        </button>
+
+    </header>
+
+    <!-- DAILY QUOTE -->
+
+    <section class="dailyQuote">
+
+        <h3>
+
+            Today's Inspiration
+
+        </h3>
+
+        <p id="dailyQuote">
+
+            "A strong woman stands up for herself.
+            A stronger woman stands up for others."
+
+        </p>
+
+    </section>
+
+    <!-- MAIN MENU -->
+
+    <section class="menuGrid">
+
+        <div class="menuCard" id="liveLocationCard">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h3>Live Location</h3>
+
+        </div>
+
+        <div class="menuCard" id="trustedContactsCard">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            <h3>Trusted Contacts</h3>
+
+        </div>
+
+        <div class="menuCard" id="safePlacesCard">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>Safe Places</h3>
+
+        </div>
+
+        <div class="menuCard" id="emergencyNumbersCard">
+
+            <i class="fa-solid fa-phone-volume"></i>
+
+            <h3>Emergency</h3>
+
+        </div>
+
+        <div class="menuCard" id="journeyCard">
+
+            <i class="fa-solid fa-route"></i>
+
+            <h3>Safe Journey</h3>
+
+        </div>
+
+        <div class="menuCard" id="settingsCard">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <h3>Settings</h3>
+
+        </div>
+
+    </section>
+
+    <!-- SOS BUTTON -->
+
+    <div class="sosContainer">
+
+        <button id="sosButton">
+
+            SOS
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- BOTTOM NAVIGATION STARTS -->
+<!-- ========================================= -->
+
+<nav id="bottomNavigation">
+  <!-- ========================================= -->
+<!-- BOTTOM NAVIGATION -->
+<!-- ========================================= -->
+
+<div class="bottomNavContainer">
+
+    <button class="navButton active" id="navHome">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+    </button>
+
+    <button class="navButton" id="navLocation">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <span>Location</span>
+
+    </button>
+
+    <button class="navButton centerButton" id="navSOS">
+
+        <i class="fa-solid fa-shield-heart"></i>
+
+    </button>
+
+    <button class="navButton" id="navContacts">
+
+        <i class="fa-solid fa-user-group"></i>
+
+        <span>Contacts</span>
+
+    </button>
+
+    <button class="navButton" id="navProfile">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>Profile</span>
+
+    </button>
+
+</div>
+
+</nav>
+
+<!-- ========================================= -->
+<!-- PREMIUM POPUP -->
+<!-- ========================================= -->
+
+<section
+id="popupScreen"
+class="hideScreen">
+
+<div class="popupContainer">
+
+    <div class="popupIcon">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+    </div>
+
+    <h2 id="popupTitle">
+
+        Success
+
+    </h2>
+
+    <p id="popupMessage">
+
+        Welcome to Safety Bubble
+
+    </p>
+
+    <button
+    id="popupButton">
+
+        OK
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- LOADER -->
+<!-- ========================================= -->
+
+<div id="pageLoader">
+
+<div class="loaderCircle"></div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- BACKGROUND PARTICLES -->
+<!-- ========================================= -->
+
+<div id="particlesBackground"></div>
+
+<!-- ========================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================= -->
 
 <script src="script.js"></script>
 
