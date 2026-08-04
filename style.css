@@ -1,305 +1,74 @@
-/* ===========================
-   SAFETY BUBBLE - PREMIUM UI
+/* ======================================================
+   SAFETY BUBBLE
+   PREMIUM UI
+   STYLE.CSS
    PART 1
-=========================== */
+====================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#4b0082,#6a11cb,#2575fc);
-    background-size:300% 300%;
-    animation:bgMove 12s ease infinite;
-    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+    135deg,
+    #2b1055,
+    #4c1d95,
+    #6d28d9,
+    #2563eb);
+
+    background-size:400% 400%;
+
+    animation:gradientAnimation 12s ease infinite;
+
+    color:#ffffff;
+
     overflow-x:hidden;
+
     min-height:100vh;
+
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+/* ===================================== */
 
-section{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-.hidden{
-    display:none;
-}
-
-.glass{
-    width:100%;
-    max-width:420px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
-    border-radius:30px;
-    padding:30px;
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
-}
-
-.logo-circle{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:auto;
-    background:linear-gradient(135deg,#ff4d6d,#ff9a3c);
-    box-shadow:0 0 35px rgba(255,120,120,.6);
-}
-
-.logo-circle i{
-    font-size:60px;
-}
-
-h1,h2,h3{
-    text-align:center;
-    margin-top:18px;
-}
-
-p{
-    text-align:center;
-    margin-top:12px;
-    line-height:1.6;
-}
-
-.quote{
-    font-style:italic;
-    color:#ffeaa7;
-    margin:18px 0;
-}
-
-button{
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    border:none;
-    border-radius:18px;
-    background:linear-gradient(90deg,#ff4d6d,#ff9a3c);
-    color:#fff;
-    font-size:17px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.03);
-}
-
-input,
-textarea{
-    width:100%;
-    margin-top:15px;
-    padding:14px;
-    border:none;
-    outline:none;
-    border-radius:15px;
-    background:rgba(255,255,255,.15);
-    color:#fff;
-    font-size:15px;
-}
-
-input::placeholder,
-textarea::placeholder{
-    color:#f1f1f1;
-}
-
-textarea{
-    min-height:90px;
-    resize:none;
-}
-/* ===========================
-   SAFETY BUBBLE - PREMIUM UI
-   PART 2
-=========================== */
-
-.home-card{
-    text-align:center;
-}
-
-.menu{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-    margin-top:25px;
-}
-
-.item{
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:18px;
-    padding:18px;
-    transition:.35s;
-    cursor:pointer;
-}
-
-.item:hover{
-    transform:translateY(-6px) scale(1.04);
-    background:rgba(255,255,255,.22);
-}
-
-.item i{
-    font-size:30px;
-    margin-bottom:10px;
-    color:#ffd166;
-}
-
-.item span{
-    display:block;
-    font-size:14px;
-    font-weight:600;
-}
-
-#sosButton{
-    margin-top:35px;
-    height:80px;
-    width:80px;
-    border-radius:50%;
-    font-size:24px;
-    font-weight:800;
-    background:#ff1744;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    box-shadow:
-    0 0 20px #ff1744,
-    0 0 45px #ff1744,
-    0 0 70px rgba(255,23,68,.6);
-    animation:sosPulse 1.5s infinite;
-}
-
-@keyframes sosPulse{
+@keyframes gradientAnimation{
 
 0%{
-transform:scale(1);
+
+background-position:0% 50%;
+
 }
 
 50%{
-transform:scale(1.08);
+
+background-position:100% 50%;
+
 }
 
 100%{
-transform:scale(1);
-}
 
-}
-
-#particles{
-
-position:fixed;
-width:100%;
-height:100%;
-left:0;
-top:0;
-pointer-events:none;
-overflow:hidden;
-z-index:-1;
-
-}
-
-#particles::before,
-#particles::after{
-
-content:"";
-position:absolute;
-width:300px;
-height:300px;
-border-radius:50%;
-background:rgba(255,255,255,.08);
-filter:blur(60px);
-
-}
-
-#particles::before{
-
-top:-100px;
-left:-100px;
-
-}
-
-#particles::after{
-
-right:-100px;
-bottom:-100px;
-
-}
-
-#splash h1{
-
-font-size:42px;
-font-weight:800;
-
-}
-
-#splash p{
-
-font-size:18px;
-opacity:.9;
-
-}
-
-@media(max-width:768px){
-
-.glass{
-
-padding:25px;
-
-}
-
-.menu{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-h1{
-
-font-size:34px;
-
-}
-
-h2{
-
-font-size:28px;
-
-}
-
-button{
-
-font-size:16px;
+background-position:0% 50%;
 
 }
 
 }
-/* Premium Popup */
 
-.popup{
+/* ===================================== */
 
-position:fixed;
-
-top:0;
-
-left:0;
+section{
 
 width:100%;
 
-height:100%;
-
-background:rgba(0,0,0,.55);
+min-height:100vh;
 
 display:flex;
 
@@ -307,59 +76,401 @@ justify-content:center;
 
 align-items:center;
 
-z-index:9999;
-
-animation:fadeIn .3s;
-
-}
-
-.popup-box{
-
-width:320px;
-
 padding:25px;
 
-border-radius:25px;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(18px);
-
-text-align:center;
-
-box-shadow:0 0 40px rgba(0,0,0,.4);
+position:relative;
 
 }
 
-.popup-box h2{
+/* ===================================== */
 
-margin-top:10px;
+.hideScreen{
 
-}
-
-.popup-box p{
-
-margin:15px 0;
+display:none;
 
 }
 
-.popup-box button{
+/* ===================================== */
 
-margin-top:10px;
+button{
+
+cursor:pointer;
+
+font-family:'Poppins',sans-serif;
+
+border:none;
+
+outline:none;
+
+transition:.35s;
 
 }
 
-#popupIcon{
+input,
+textarea{
 
-font-size:55px;
+font-family:'Poppins',sans-serif;
+
+outline:none;
+
+border:none;
 
 }
 
-@keyframes fadeIn{
+/* ===================================== */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ===================================== */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* ===================================== */
+
+::selection{
+
+background:#ff3d71;
+
+color:#ffffff;
+
+}
+
+/* ===================================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff3d71;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#2d2d2d;
+
+}
+/* ======================================================
+   LOADING SCREEN
+   PART 2
+====================================================== */
+
+#loadingScreen{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.loadingContainer{
+
+    width:100%;
+
+    max-width:420px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.logoContainer{
+
+    position:relative;
+
+    width:180px;
+
+    height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.mainLogo{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+    0 0 30px rgba(255,61,113,.5),
+    0 0 70px rgba(255,152,0,.4);
+
+    z-index:5;
+
+}
+
+.mainLogo i{
+
+    font-size:55px;
+
+    color:#ffffff;
+
+    animation:logoFloat 3s ease-in-out infinite;
+
+}
+
+.loadingContainer h1{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-top:20px;
+
+}
+
+.loadingContainer h3{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    color:#ffe082;
+
+}
+
+.loadingContainer p{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    color:#f5f5f5;
+
+    letter-spacing:2px;
+
+}
+/* ======================================================
+   LOADING SCREEN ANIMATIONS
+   PART 3
+====================================================== */
+
+/* ===== Animated Rings ===== */
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.25);
+
+}
+
+.ring1{
+
+    width:140px;
+
+    height:140px;
+
+    animation:ringOne 3s linear infinite;
+
+}
+
+.ring2{
+
+    width:170px;
+
+    height:170px;
+
+    animation:ringTwo 4s linear infinite;
+
+}
+
+.ring3{
+
+    width:200px;
+
+    height:200px;
+
+    animation:ringThree 5s linear infinite;
+
+}
+
+/* ===== Ring Animations ===== */
+
+@keyframes ringOne{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes ringTwo{
+
+from{
+
+transform:rotate(360deg);
+
+}
+
+to{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+@keyframes ringThree{
+
+0%{
+
+transform:scale(.9);
+
+opacity:.4;
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.9);
+
+opacity:.4;
+
+}
+
+}
+
+/* ===== Logo Floating ===== */
+
+@keyframes logoFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===== Title Glow ===== */
+
+.loadingContainer h1{
+
+animation:titleGlow 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+from{
+
+text-shadow:
+
+0 0 10px #ffffff,
+
+0 0 20px #ffffff;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 20px #ff3d71,
+
+0 0 40px #ff9800,
+
+0 0 70px #ffffff;
+
+}
+
+}
+
+/* ===== Fade Animation ===== */
+
+#loadingScreen{
+
+animation:screenFade 1s ease;
+
+}
+
+@keyframes screenFade{
 
 from{
 
 opacity:0;
+
+transform:scale(.96);
 
 }
 
@@ -367,6 +478,2585 @@ to{
 
 opacity:1;
 
+transform:scale(1);
+
 }
 
 }
+/* ======================================================
+   WELCOME SCREEN
+   PART 4
+====================================================== */
+
+#welcomeScreen{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.welcomeWrapper{
+
+    width:100%;
+
+    max-width:430px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.welcomeTop{
+
+    margin-bottom:25px;
+
+}
+
+.welcomeIcon{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    box-shadow:
+    0 0 25px rgba(255,61,113,.5),
+    0 0 60px rgba(255,152,0,.4);
+
+}
+
+.welcomeIcon i{
+
+    font-size:50px;
+
+    color:#ffffff;
+
+}
+
+.welcomeTop h1{
+
+    margin-top:25px;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+.welcomeTop h1 span{
+
+    color:#ffd54f;
+
+}
+
+.welcomeTop h3{
+
+    margin-top:10px;
+
+    color:#eeeeee;
+
+    font-size:20px;
+
+    font-weight:500;
+
+}
+
+.quoteCard{
+
+    width:100%;
+
+    padding:22px;
+
+    margin-top:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.20);
+
+}
+
+#quoteText{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#fff8dc;
+
+    font-style:italic;
+
+}
+
+.welcomeImage{
+
+    width:230px;
+
+    height:230px;
+
+    margin-top:35px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:5px solid rgba(255,255,255,.20);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.20);
+
+}
+
+.welcomeImage img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+#startButton{
+
+    margin-top:40px;
+
+    width:100%;
+
+    height:60px;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    box-shadow:
+    0 10px 25px rgba(255,61,113,.35);
+
+}
+
+#startButton:hover{
+
+    transform:translateY(-4px);
+
+}
+/* ======================================================
+   WELCOME SCREEN ANIMATIONS
+   PART 5
+====================================================== */
+
+/* Welcome Icon Animation */
+
+.welcomeIcon{
+
+animation:welcomeIconFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes welcomeIconFloat{
+
+0%{
+
+transform:translateY(0px) scale(1);
+
+}
+
+50%{
+
+transform:translateY(-10px) scale(1.05);
+
+}
+
+100%{
+
+transform:translateY(0px) scale(1);
+
+}
+
+}
+
+/* Welcome Image Animation */
+
+.welcomeImage{
+
+animation:welcomeImageFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes welcomeImageFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Quote Card Animation */
+
+.quoteCard{
+
+animation:quoteCardGlow 3s ease-in-out infinite alternate;
+
+}
+
+@keyframes quoteCardGlow{
+
+from{
+
+box-shadow:
+
+0 0 15px rgba(255,255,255,.08);
+
+}
+
+to{
+
+box-shadow:
+
+0 0 35px rgba(255,152,0,.35),
+
+0 0 55px rgba(255,61,113,.20);
+
+}
+
+}
+
+/* Quote Fade */
+
+#quoteText{
+
+animation:quoteFade 4s ease-in-out infinite;
+
+}
+
+@keyframes quoteFade{
+
+0%{
+
+opacity:.4;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.4;
+
+}
+
+}
+
+/* Get Started Button */
+
+#startButton{
+
+position:relative;
+
+overflow:hidden;
+
+transition:.35s;
+
+}
+
+#startButton:hover{
+
+transform:translateY(-5px) scale(1.03);
+
+box-shadow:
+
+0 0 20px rgba(255,61,113,.50),
+
+0 0 45px rgba(255,152,0,.40);
+
+}
+
+#startButton:active{
+
+transform:scale(.97);
+
+}
+
+/* Welcome Screen Fade */
+
+#welcomeScreen{
+
+animation:welcomeFade .8s ease;
+
+}
+
+@keyframes welcomeFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0px);
+
+}
+
+}
+/* ======================================================
+   REGISTRATION SCREEN
+   PART 6
+====================================================== */
+
+#registrationScreen{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.registerWrapper{
+
+    width:100%;
+
+    max-width:430px;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.25);
+
+}
+
+.registerHeader{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.registerHeader h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.registerHeader p{
+
+    margin-top:10px;
+
+    color:#eeeeee;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+#registrationForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.inputBox{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.inputBox:hover{
+
+    transform:translateY(-2px);
+
+    border-color:rgba(255,255,255,.35);
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.10);
+
+}
+
+.inputBox:focus-within{
+
+    border-color:#ffd54f;
+
+    box-shadow:
+    0 0 25px rgba(255,213,79,.35);
+
+}
+
+.inputBox i{
+
+    width:60px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    color:#ffd54f;
+
+}
+
+.inputBox input{
+
+    width:100%;
+
+    height:60px;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    padding-right:18px;
+
+}
+
+.inputBox textarea{
+
+    width:100%;
+
+    min-height:110px;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    padding:18px 18px 18px 0;
+
+    resize:none;
+
+}
+
+.inputBox input::placeholder,
+.inputBox textarea::placeholder{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+#continueButton{
+
+    margin-top:15px;
+
+    height:60px;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    box-shadow:
+    0 10px 30px rgba(255,61,113,.35);
+
+    transition:.35s;
+
+}
+
+#continueButton:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 25px rgba(255,61,113,.45),
+    0 0 45px rgba(255,152,0,.30);
+
+}
+/* ======================================================
+   REGISTRATION SCREEN ANIMATIONS
+   PART 7
+====================================================== */
+
+/* Glass Card Animation */
+
+.registerWrapper{
+
+    animation:registerFade .8s ease;
+
+}
+
+@keyframes registerFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Floating Header */
+
+.registerHeader h1{
+
+    animation:titleFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes titleFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Input Animation */
+
+.inputBox{
+
+    animation:inputFade .8s ease;
+
+}
+
+@keyframes inputFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* Icons */
+
+.inputBox i{
+
+    transition:.35s;
+
+}
+
+.inputBox:hover i{
+
+    color:#ffffff;
+
+    transform:scale(1.15);
+
+}
+
+/* Continue Button */
+
+#continueButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#continueButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.30);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+#continueButton:hover::before{
+
+    left:150%;
+
+}
+
+#continueButton:active{
+
+    transform:scale(.97);
+
+}
+
+/* Background Glow */
+
+#registrationScreen::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:rgba(255,61,113,.15);
+
+    filter:blur(80px);
+
+    top:-120px;
+
+    left:-120px;
+
+    z-index:-1;
+
+}
+
+#registrationScreen::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.18);
+
+    filter:blur(90px);
+
+    right:-120px;
+
+    bottom:-120px;
+
+    z-index:-1;
+
+}
+/* ======================================================
+   OTP SCREEN
+   PART 8
+====================================================== */
+
+#otpScreen{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.otpWrapper{
+
+    width:100%;
+
+    max-width:430px;
+
+    padding:28px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.25);
+
+    animation:otpFade .8s ease;
+
+}
+
+@keyframes otpFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.otpHeader{
+
+    text-align:center;
+
+}
+
+.otpIcon{
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    box-shadow:
+    0 0 25px rgba(255,61,113,.45);
+
+    animation:otpIconFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes otpIconFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.otpIcon i{
+
+    font-size:42px;
+
+    color:#ffffff;
+
+}
+
+.otpHeader h1{
+
+    margin-top:20px;
+
+    font-size:30px;
+
+    color:#ffffff;
+
+}
+
+.otpHeader p{
+
+    margin-top:10px;
+
+    color:#eeeeee;
+
+    line-height:1.6;
+
+}
+
+.otpCard{
+
+    margin-top:35px;
+
+}
+
+.otpInputBox{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+.otpInputBox input{
+
+    width:55px;
+
+    height:60px;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:.35s;
+
+}
+
+.otpInputBox input:focus{
+
+    border-color:#ffd54f;
+
+    box-shadow:
+    0 0 18px rgba(255,213,79,.45);
+
+}
+
+.otpInfo{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#f5f5f5;
+
+    font-size:15px;
+
+}
+
+#verifyOtpButton{
+
+    width:100%;
+
+    height:60px;
+
+    margin-top:30px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    box-shadow:
+    0 10px 25px rgba(255,61,113,.35);
+
+    transition:.35s;
+
+}
+
+#verifyOtpButton:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px rgba(255,61,113,.50),
+    0 0 40px rgba(255,152,0,.35);
+
+}
+
+#verifyOtpButton:active{
+
+    transform:scale(.97);
+
+}
+/* ======================================================
+   HOME DASHBOARD
+   PART 9
+====================================================== */
+
+#homeScreen{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:25px;
+
+}
+
+.homeWrapper{
+
+    width:100%;
+
+    max-width:460px;
+
+    margin:auto;
+
+}
+
+/* =======================================
+   HEADER
+======================================= */
+
+.homeHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.profileArea{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.profileImage{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #ff3d71,
+    #ff9800);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+    0 0 20px rgba(255,61,113,.45);
+
+}
+
+.profileImage i{
+
+    font-size:28px;
+
+    color:#ffffff;
+
+}
+
+.profileArea h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.profileArea p{
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#dddddd;
+
+}
+
+/* =======================================
+   NOTIFICATION
+======================================= */
+
+#notificationButton{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s;
+
+}
+
+#notificationButton:hover{
+
+    transform:rotate(15deg) scale(1.08);
+
+    background:rgba(255,255,255,.20);
+
+}
+
+/* =======================================
+   DAILY QUOTE
+======================================= */
+
+.dailyQuote{
+
+    margin-bottom:28px;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.dailyQuote h3{
+
+    color:#ffd54f;
+
+    font-size:18px;
+
+    margin-bottom:12px;
+
+}
+
+.dailyQuote p{
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+    font-style:italic;
+
+}
+
+/* =======================================
+   HOME FADE
+======================================= */
+
+.homeWrapper{
+
+    animation:homeFade .8s ease;
+
+}
+
+@keyframes homeFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+   }
+/* ======================================================
+   HOME MENU + SOS BUTTON
+   PART 10
+====================================================== */
+
+/* =======================================
+   MENU GRID
+======================================= */
+
+.menuGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+/* =======================================
+   MENU CARD
+======================================= */
+
+.menuCard{
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:22px 15px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.menuCard:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 0 25px rgba(255,255,255,.15),
+
+    0 0 45px rgba(255,61,113,.18);
+
+}
+
+.menuCard i{
+
+    font-size:34px;
+
+    color:#ffd54f;
+
+    margin-bottom:15px;
+
+    transition:.35s;
+
+}
+
+.menuCard:hover i{
+
+    transform:scale(1.15);
+
+    color:#ffffff;
+
+}
+
+.menuCard h3{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    line-height:1.5;
+
+}
+
+/* =======================================
+   SOS SECTION
+======================================= */
+
+.sosContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:45px;
+
+    margin-bottom:100px;
+
+}
+
+#sosButton{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    border:none;
+
+    outline:none;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #ff1744,
+
+    #ff5252,
+
+    #ff9800
+
+    );
+
+    color:#ffffff;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:sosPulse 2s infinite;
+
+    box-shadow:
+
+    0 0 25px rgba(255,23,68,.55),
+
+    0 0 55px rgba(255,82,82,.45),
+
+    0 0 90px rgba(255,152,0,.35);
+
+}
+
+@keyframes sosPulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+#sosButton:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 35px rgba(255,23,68,.70),
+
+0 0 70px rgba(255,82,82,.55),
+
+0 0 110px rgba(255,152,0,.45);
+
+}
+
+#sosButton:active{
+
+transform:scale(.95);
+
+}
+/* ======================================================
+   BOTTOM NAVIGATION
+   PART 11
+====================================================== */
+
+/* ==============================
+   Bottom Navigation
+================================ */
+
+#bottomNavigation{
+
+    position:fixed;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.bottomNavContainer{
+
+    width:100%;
+
+    max-width:480px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    margin:0 15px 15px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 10px 35px rgba(0,0,0,.30);
+
+}
+
+.navButton{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    border:none;
+
+    transition:.35s;
+
+}
+
+.navButton i{
+
+    font-size:22px;
+
+}
+
+.navButton span{
+
+    margin-top:4px;
+
+    font-size:11px;
+
+}
+
+.navButton:hover{
+
+    transform:translateY(-5px);
+
+    color:#ffd54f;
+
+}
+
+.navButton.active{
+
+    color:#ffd54f;
+
+}
+
+.centerButton{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #ff3d71,
+
+    #ff9800
+
+    );
+
+    color:#ffffff;
+
+    box-shadow:
+
+    0 0 25px rgba(255,61,113,.45);
+
+}
+
+.centerButton i{
+
+    font-size:30px;
+
+}
+
+/* ==============================
+   POPUP
+================================ */
+
+#popupScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2000;
+
+}
+
+.popupContainer{
+
+    width:90%;
+
+    max-width:360px;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.20);
+
+}
+
+.popupIcon{
+
+    font-size:65px;
+
+    color:#4CAF50;
+
+    margin-bottom:15px;
+
+}
+
+#popupTitle{
+
+    font-size:28px;
+
+    color:#ffffff;
+
+}
+
+#popupMessage{
+
+    margin-top:15px;
+
+    line-height:1.7;
+
+    color:#eeeeee;
+
+}
+
+#popupButton{
+
+    width:100%;
+
+    height:56px;
+
+    margin-top:25px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+
+    135deg,
+
+    #ff3d71,
+
+    #ff9800
+
+    );
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+/* ==============================
+   PAGE LOADER
+================================ */
+
+#pageLoader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#1a093d;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:3000;
+
+}
+
+.loaderCircle{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.20);
+
+    border-top-color:#ffd54f;
+
+    animation:loaderSpin 1s linear infinite;
+
+}
+
+@keyframes loaderSpin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* ======================================================
+   BACKGROUND EFFECTS + RESPONSIVE
+   PART 12
+====================================================== */
+
+/* ==============================
+   PARTICLE BACKGROUND
+================================ */
+
+#particlesBackground{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+#particlesBackground::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(255,61,113,.12);
+
+    filter:blur(120px);
+
+    top:-120px;
+
+    left:-120px;
+
+    animation:particleMove1 12s ease-in-out infinite;
+
+}
+
+#particlesBackground::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.15);
+
+    filter:blur(120px);
+
+    bottom:-120px;
+
+    right:-120px;
+
+    animation:particleMove2 15s ease-in-out infinite;
+
+}
+
+@keyframes particleMove1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(60px,40px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+@keyframes particleMove2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-60px,-40px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+/* ==============================
+   GLASS EFFECT
+================================ */
+
+.glass{
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.18);
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.20);
+
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:768px){
+
+.loadingContainer h1{
+
+font-size:34px;
+
+}
+
+.loadingContainer h3{
+
+font-size:18px;
+
+}
+
+.welcomeTop h1{
+
+font-size:30px;
+
+}
+
+.registerHeader h1{
+
+font-size:28px;
+
+}
+
+.otpHeader h1{
+
+font-size:28px;
+
+}
+
+.profileArea h2{
+
+font-size:20px;
+
+}
+
+.menuGrid{
+
+gap:14px;
+
+}
+
+.menuCard{
+
+padding:18px 12px;
+
+}
+
+#sosButton{
+
+width:120px;
+
+height:120px;
+
+font-size:28px;
+
+}
+
+.bottomNavContainer{
+
+height:74px;
+
+}
+
+.centerButton{
+
+width:66px;
+
+height:66px;
+
+}
+
+}
+
+/* ==============================
+   SMALL MOBILE
+================================ */
+
+@media(max-width:420px){
+
+section{
+
+padding:18px;
+
+}
+
+.registerWrapper,
+.otpWrapper{
+
+padding:22px;
+
+}
+
+.otpInputBox input{
+
+width:46px;
+
+height:54px;
+
+font-size:20px;
+
+}
+
+.welcomeImage{
+
+width:190px;
+
+height:190px;
+
+}
+
+}
+/* ======================================================
+   FINAL PREMIUM POLISH
+   PART 13
+====================================================== */
+
+/* Smooth Animation */
+
+*{
+
+transition:
+
+background .35s ease,
+
+color .35s ease,
+
+transform .35s ease,
+
+box-shadow .35s ease,
+
+border .35s ease;
+
+}
+
+/* Premium Scroll */
+
+body{
+
+scroll-behavior:smooth;
+
+}
+
+/* Beautiful Card Hover */
+
+.menuCard,
+.quoteCard,
+.registerWrapper,
+.otpWrapper,
+.dailyQuote,
+.popupContainer{
+
+transition:.4s ease;
+
+}
+
+.menuCard:hover,
+.quoteCard:hover,
+.registerWrapper:hover,
+.otpWrapper:hover,
+.dailyQuote:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.28),
+
+0 0 25px rgba(255,255,255,.10);
+
+}
+
+/* Button Shine */
+
+#startButton,
+#continueButton,
+#verifyOtpButton,
+#popupButton,
+#sosButton{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#startButton::before,
+#continueButton::before,
+#verifyOtpButton::before,
+#popupButton::before,
+#sosButton::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:45%;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.30);
+
+transform:skewX(-25deg);
+
+transition:.9s;
+
+}
+
+#startButton:hover::before,
+#continueButton:hover::before,
+#verifyOtpButton:hover::before,
+#popupButton:hover::before,
+#sosButton:hover::before{
+
+left:160%;
+
+}
+
+/* Input Hover */
+
+.inputBox:hover{
+
+background:
+
+rgba(255,255,255,.16);
+
+}
+
+/* Floating Effect */
+
+.profileImage,
+.welcomeIcon,
+.mainLogo{
+
+animation:floatingAnimation 5s ease-in-out infinite;
+
+}
+
+@keyframes floatingAnimation{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Text Glow */
+
+.loadingContainer h1,
+.welcomeTop span{
+
+text-shadow:
+
+0 0 12px rgba(255,255,255,.35),
+
+0 0 24px rgba(255,213,79,.25);
+
+}
+
+/* Image Hover */
+
+.welcomeImage img{
+
+transition:.5s;
+
+}
+
+.welcomeImage:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* Notification */
+
+#notificationButton:hover{
+
+box-shadow:
+
+0 0 18px rgba(255,255,255,.25);
+
+}
+
+/* Active Click */
+
+button:active{
+
+transform:scale(.96);
+
+}
+/* ======================================================
+   UTILITY CLASSES & FINAL OPTIMIZATION
+   PART 14
+====================================================== */
+
+/* ==============================
+   FLEX UTILITIES
+================================ */
+
+.flex{
+
+display:flex;
+
+}
+
+.flexCenter{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.flexBetween{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.flexColumn{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/* ==============================
+   TEXT UTILITIES
+================================ */
+
+.textCenter{
+
+text-align:center;
+
+}
+
+.textWhite{
+
+color:#ffffff;
+
+}
+
+.textGold{
+
+color:#ffd54f;
+
+}
+
+.textGray{
+
+color:#dddddd;
+
+}
+
+.textBold{
+
+font-weight:700;
+
+}
+
+/* ==============================
+   SPACING
+================================ */
+
+.mt10{
+
+margin-top:10px;
+
+}
+
+.mt20{
+
+margin-top:20px;
+
+}
+
+.mt30{
+
+margin-top:30px;
+
+}
+
+.mt40{
+
+margin-top:40px;
+
+}
+
+.mb10{
+
+margin-bottom:10px;
+
+}
+
+.mb20{
+
+margin-bottom:20px;
+
+}
+
+.mb30{
+
+margin-bottom:30px;
+
+}
+
+.p10{
+
+padding:10px;
+
+}
+
+.p20{
+
+padding:20px;
+
+}
+
+.p30{
+
+padding:30px;
+
+}
+
+/* ==============================
+   BORDER RADIUS
+================================ */
+
+.radius10{
+
+border-radius:10px;
+
+}
+
+.radius15{
+
+border-radius:15px;
+
+}
+
+.radius20{
+
+border-radius:20px;
+
+}
+
+.radius25{
+
+border-radius:25px;
+
+}
+
+.radius30{
+
+border-radius:30px;
+
+}
+
+/* ==============================
+   SHADOWS
+================================ */
+
+.shadowSmall{
+
+box-shadow:
+
+0 5px 15px rgba(0,0,0,.18);
+
+}
+
+.shadowMedium{
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.shadowLarge{
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.30);
+
+}
+
+/* ==============================
+   GLASS EFFECT
+================================ */
+
+.glassEffect{
+
+background:
+
+rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:
+
+1px solid rgba(255,255,255,.18);
+
+}
+
+/* ==============================
+   PERFORMANCE
+================================ */
+
+img{
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+
+button{
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+input,
+textarea{
+
+caret-color:#ffd54f;
+
+}
+
+*{
+
+-webkit-font-smoothing:antialiased;
+
+-moz-osx-font-smoothing:grayscale;
+
+}
+/* ======================================================
+   STYLE.CSS
+   PART 15 (FINAL)
+====================================================== */
+
+/* ==============================
+   GLOBAL FOCUS
+================================ */
+
+button:focus,
+input:focus,
+textarea:focus{
+
+outline:none;
+
+}
+
+/* ==============================
+   IMAGE QUALITY
+================================ */
+
+img{
+
+object-fit:cover;
+
+image-rendering:auto;
+
+}
+
+/* ==============================
+   DISABLE TEXT SELECT
+================================ */
+
+.mainLogo,
+.welcomeIcon,
+.profileImage,
+.menuCard i,
+#sosButton{
+
+user-select:none;
+
+}
+
+/* ==============================
+   SAFE AREA (NOTCH PHONES)
+================================ */
+
+body{
+
+padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+/* ==============================
+   REDUCE ANIMATION
+================================ */
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+/* ==============================
+   LARGE DISPLAYS
+================================ */
+
+@media(min-width:1200px){
+
+.homeWrapper,
+.registerWrapper,
+.otpWrapper,
+.welcomeWrapper{
+
+max-width:500px;
+
+}
+
+}
+
+/* ==============================
+   PRINT
+================================ */
+
+@media print{
+
+body{
+
+background:#ffffff;
+
+color:#000000;
+
+}
+
+#bottomNavigation,
+#pageLoader,
+#particlesBackground{
+
+display:none;
+
+}
+
+}
+
+/* ==============================
+   END OF FILE
+================================ */
+
+/*
+===========================================
+ Safety Bubble
+ Premium Women's Safety Platform
+
+ Version : 1.0
+ UI      : Premium Glass UI
+ Status  : style.css Completed
+
+ Designed for future modules:
+ ✔ Firebase
+ ✔ Live Location
+ ✔ Trusted Contacts
+ ✔ SOS
+ ✔ Notifications
+ ✔ PWA
+ ✔ AI Features
+
+ End of style.css
+===========================================
+*/
