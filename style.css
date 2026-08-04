@@ -1,72 +1,454 @@
-/* ======================================================
+/* =========================================================
    SAFETY BUBBLE
-   PREMIUM UI
    STYLE.CSS
+   VERSION 1.0
    PART 1
-====================================================== */
+========================================================= */
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
+/* =========================================================
+   ROOT COLORS
+========================================================= */
+
+:root{
+
+--primary:#7C3AED;
+--secondary:#9333EA;
+--accent:#EC4899;
+
+--success:#22C55E;
+--warning:#F59E0B;
+--danger:#EF4444;
+--info:#3B82F6;
+
+--white:#FFFFFF;
+--black:#111827;
+
+--text:#F8FAFC;
+--text2:#CBD5E1;
+
+--card:rgba(255,255,255,0.08);
+--border:rgba(255,255,255,0.15);
+
+--radius:22px;
+
+--shadow:
+0 15px 40px rgba(0,0,0,.25);
+
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
 
 body{
 
-    font-family:'Poppins',sans-serif;
+font-family:'Poppins',sans-serif;
 
-    background:linear-gradient(
-    135deg,
-    #2b1055,
-    #4c1d95,
-    #6d28d9,
-    #2563eb);
+background:
+linear-gradient(
+135deg,
+#3B0764,
+#4C1D95,
+#7C3AED
+);
 
-    background-size:400% 400%;
+color:var(--text);
 
-    animation:gradientAnimation 12s ease infinite;
+min-height:100vh;
 
-    color:#ffffff;
+overflow-x:hidden;
 
-    overflow-x:hidden;
-
-    min-height:100vh;
+position:relative;
 
 }
 
-/* ===================================== */
+/* =========================================================
+   LINKS
+========================================================= */
 
-@keyframes gradientAnimation{
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button{
+
+font-family:'Poppins',sans-serif;
+
+cursor:pointer;
+
+border:none;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea{
+
+font-family:'Poppins',sans-serif;
+
+outline:none;
+
+border:none;
+
+resize:none;
+
+}
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img{
+
+width:100%;
+
+display:block;
+
+}
+
+/* =========================================================
+   HIDE SCREEN
+========================================================= */
+
+.hideScreen{
+
+display:none !important;
+
+}
+
+/* =========================================================
+   END OF PART 1
+========================================================= */
+/* =========================================================
+   PART 2
+   BACKGROUND + LOADING SCREEN
+========================================================= */
+
+/* ==========================================
+   PARTICLES BACKGROUND
+========================================== */
+
+#particlesBackground{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+radial-gradient(circle at top left,#9333EA 0%,transparent 45%),
+radial-gradient(circle at bottom right,#EC4899 0%,transparent 40%),
+linear-gradient(135deg,#2E1065,#4C1D95,#6D28D9);
+
+z-index:-2;
+
+overflow:hidden;
+
+}
+
+/* ==========================================
+   PAGE LOADER
+========================================== */
+
+#pageLoader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(15,23,42,.88);
+
+backdrop-filter:blur(8px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.loaderCircle{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+border:6px solid rgba(255,255,255,.15);
+
+border-top:6px solid #ffffff;
+
+animation:loaderSpin 1s linear infinite;
+
+}
+
+@keyframes loaderSpin{
 
 0%{
 
-background-position:0% 50%;
-
-}
-
-50%{
-
-background-position:100% 50%;
+transform:rotate(0deg);
 
 }
 
 100%{
 
-background-position:0% 50%;
+transform:rotate(360deg);
 
 }
 
 }
 
-/* ===================================== */
+/* ==========================================
+   LOADING SCREEN
+========================================== */
 
-section{
+#loadingScreen{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+/* ==========================================
+   LOADING CONTAINER
+========================================== */
+
+.loadingContainer{
 
 width:100%;
+
+max-width:420px;
+
+}
+
+/* ==========================================
+   LOGO AREA
+========================================== */
+
+.logoContainer{
+
+position:relative;
+
+width:180px;
+
+height:180px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* ==========================================
+   ANIMATED RINGS
+========================================== */
+
+.ring{
+
+position:absolute;
+
+border-radius:50%;
+
+border:2px solid rgba(255,255,255,.30);
+
+animation:ringRotate 10s linear infinite;
+
+}
+
+.ring1{
+
+width:170px;
+
+height:170px;
+
+}
+
+.ring2{
+
+width:135px;
+
+height:135px;
+
+animation-direction:reverse;
+
+animation-duration:8s;
+
+}
+
+.ring3{
+
+width:100px;
+
+height:100px;
+
+animation-duration:6s;
+
+}
+
+@keyframes ringRotate{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ==========================================
+   MAIN LOGO
+========================================== */
+
+.mainLogo{
+
+width:82px;
+
+height:82px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#EC4899,#7C3AED);
+
+box-shadow:0 0 35px rgba(236,72,153,.45);
+
+font-size:34px;
+
+color:#fff;
+
+}
+
+/* ==========================================
+   LOADING TEXT
+========================================== */
+
+.loadingContainer h1{
+
+margin-top:35px;
+
+font-size:34px;
+
+font-weight:700;
+
+}
+
+.loadingContainer h3{
+
+margin-top:10px;
+
+font-size:18px;
+
+font-weight:500;
+
+color:var(--text2);
+
+}
+
+.loadingContainer p{
+
+margin-top:18px;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+color:#ffffffcc;
+
+}
+
+/* =========================================================
+   END OF PART 2
+========================================================= */
+/* =========================================================
+   PART 3
+   WELCOME SCREEN
+========================================================= */
+
+/* ==========================================
+   WELCOME SCREEN
+========================================== */
+
+#welcomeScreen{
 
 min-height:100vh;
 
@@ -78,305 +460,81 @@ align-items:center;
 
 padding:25px;
 
-position:relative;
+}
+
+/* ==========================================
+   WELCOME WRAPPER
+========================================== */
+
+.welcomeWrapper{
+
+width:100%;
+
+max-width:430px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:28px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
 
 }
 
-/* ===================================== */
+/* ==========================================
+   TOP SECTION
+========================================== */
 
-.hideScreen{
+.welcomeTop{
 
-display:none;
-
-}
-
-/* ===================================== */
-
-button{
-
-cursor:pointer;
-
-font-family:'Poppins',sans-serif;
-
-border:none;
-
-outline:none;
-
-transition:.35s;
+margin-bottom:25px;
 
 }
 
-input,
-textarea{
+/* ==========================================
+   ICON
+========================================== */
 
-font-family:'Poppins',sans-serif;
+.welcomeIcon{
 
-outline:none;
+width:90px;
 
-border:none;
+height:90px;
 
-}
+margin:0 auto 20px;
 
-/* ===================================== */
+border-radius:50%;
 
-img{
+display:flex;
 
-max-width:100%;
+justify-content:center;
 
-display:block;
+align-items:center;
 
-}
+background:linear-gradient(135deg,#EC4899,#7C3AED);
 
-/* ===================================== */
+box-shadow:0 0 35px rgba(236,72,153,.45);
 
-a{
+font-size:38px;
 
-text-decoration:none;
+color:#fff;
 
-color:inherit;
-
-}
-
-/* ===================================== */
-
-::selection{
-
-background:#ff3d71;
-
-color:#ffffff;
+animation:welcomePulse 2.2s infinite;
 
 }
 
-/* ===================================== */
-
-::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#ff3d71;
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#2d2d2d;
-
-}
-/* ======================================================
-   LOADING SCREEN
-   PART 2
-====================================================== */
-
-#loadingScreen{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.loadingContainer{
-
-    width:100%;
-
-    max-width:420px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-}
-
-.logoContainer{
-
-    position:relative;
-
-    width:180px;
-
-    height:180px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
-}
-
-.mainLogo{
-
-    width:120px;
-
-    height:120px;
-
-    border-radius:50%;
-
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:
-    0 0 30px rgba(255,61,113,.5),
-    0 0 70px rgba(255,152,0,.4);
-
-    z-index:5;
-
-}
-
-.mainLogo i{
-
-    font-size:55px;
-
-    color:#ffffff;
-
-    animation:logoFloat 3s ease-in-out infinite;
-
-}
-
-.loadingContainer h1{
-
-    font-size:42px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
-    margin-top:20px;
-
-}
-
-.loadingContainer h3{
-
-    margin-top:10px;
-
-    font-size:20px;
-
-    font-weight:500;
-
-    color:#ffe082;
-
-}
-
-.loadingContainer p{
-
-    margin-top:18px;
-
-    font-size:15px;
-
-    color:#f5f5f5;
-
-    letter-spacing:2px;
-
-}
-/* ======================================================
-   LOADING SCREEN ANIMATIONS
-   PART 3
-====================================================== */
-
-/* ===== Animated Rings ===== */
-
-.ring{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    border:3px solid rgba(255,255,255,.25);
-
-}
-
-.ring1{
-
-    width:140px;
-
-    height:140px;
-
-    animation:ringOne 3s linear infinite;
-
-}
-
-.ring2{
-
-    width:170px;
-
-    height:170px;
-
-    animation:ringTwo 4s linear infinite;
-
-}
-
-.ring3{
-
-    width:200px;
-
-    height:200px;
-
-    animation:ringThree 5s linear infinite;
-
-}
-
-/* ===== Ring Animations ===== */
-
-@keyframes ringOne{
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-@keyframes ringTwo{
-
-from{
-
-transform:rotate(360deg);
-
-}
-
-to{
-
-transform:rotate(0deg);
-
-}
-
-}
-
-@keyframes ringThree{
+@keyframes welcomePulse{
 
 0%{
 
-transform:scale(.9);
-
-opacity:.4;
+transform:scale(1);
 
 }
 
@@ -384,448 +542,131 @@ opacity:.4;
 
 transform:scale(1.08);
 
-opacity:1;
-
 }
 
 100%{
-
-transform:scale(.9);
-
-opacity:.4;
-
-}
-
-}
-
-/* ===== Logo Floating ===== */
-
-@keyframes logoFloat{
-
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-
-/* ===== Title Glow ===== */
-
-.loadingContainer h1{
-
-animation:titleGlow 2s ease-in-out infinite alternate;
-
-}
-
-@keyframes titleGlow{
-
-from{
-
-text-shadow:
-
-0 0 10px #ffffff,
-
-0 0 20px #ffffff;
-
-}
-
-to{
-
-text-shadow:
-
-0 0 20px #ff3d71,
-
-0 0 40px #ff9800,
-
-0 0 70px #ffffff;
-
-}
-
-}
-
-/* ===== Fade Animation ===== */
-
-#loadingScreen{
-
-animation:screenFade 1s ease;
-
-}
-
-@keyframes screenFade{
-
-from{
-
-opacity:0;
-
-transform:scale(.96);
-
-}
-
-to{
-
-opacity:1;
 
 transform:scale(1);
 
 }
 
 }
-/* ======================================================
-   WELCOME SCREEN
-   PART 4
-====================================================== */
 
-#welcomeScreen{
+/* ==========================================
+   TITLE
+========================================== */
 
-    position:relative;
+.welcomeWrapper h1{
 
-    overflow:hidden;
+font-size:32px;
 
-}
+font-weight:700;
 
-.welcomeWrapper{
-
-    width:100%;
-
-    max-width:430px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:25px;
+line-height:1.4;
 
 }
 
-.welcomeTop{
+.welcomeWrapper span{
 
-    margin-bottom:25px;
-
-}
-
-.welcomeIcon{
-
-    width:110px;
-
-    height:110px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin:auto;
-
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
-
-    box-shadow:
-    0 0 25px rgba(255,61,113,.5),
-    0 0 60px rgba(255,152,0,.4);
+color:#F9A8D4;
 
 }
 
-.welcomeIcon i{
+.welcomeWrapper h3{
 
-    font-size:50px;
+margin-top:10px;
 
-    color:#ffffff;
+font-size:17px;
 
-}
+font-weight:400;
 
-.welcomeTop h1{
-
-    margin-top:25px;
-
-    font-size:34px;
-
-    font-weight:700;
-
-    line-height:1.4;
+color:var(--text2);
 
 }
 
-.welcomeTop h1 span{
-
-    color:#ffd54f;
-
-}
-
-.welcomeTop h3{
-
-    margin-top:10px;
-
-    color:#eeeeee;
-
-    font-size:20px;
-
-    font-weight:500;
-
-}
+/* ==========================================
+   QUOTE CARD
+========================================== */
 
 .quoteCard{
 
-    width:100%;
+margin-top:25px;
 
-    padding:22px;
+background:rgba(255,255,255,.08);
 
-    margin-top:30px;
+border:1px solid rgba(255,255,255,.12);
 
-    border-radius:24px;
+border-radius:20px;
 
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    box-shadow:
-    0 12px 35px rgba(0,0,0,.20);
+padding:18px;
 
 }
 
-#quoteText{
+.quoteCard p{
 
-    font-size:17px;
+font-size:15px;
 
-    line-height:1.8;
+line-height:1.7;
 
-    color:#fff8dc;
-
-    font-style:italic;
+color:#fff;
 
 }
+
+/* ==========================================
+   IMAGE
+========================================== */
 
 .welcomeImage{
 
-    width:230px;
+margin-top:25px;
 
-    height:230px;
+border-radius:22px;
 
-    margin-top:35px;
+overflow:hidden;
 
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:5px solid rgba(255,255,255,.20);
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.20);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
 
 }
 
 .welcomeImage img{
 
-    width:100%;
+height:220px;
 
-    height:100%;
-
-    object-fit:cover;
+object-fit:cover;
 
 }
 
+/* ==========================================
+   START BUTTON
+========================================== */
+
 #startButton{
 
-    margin-top:40px;
+width:100%;
 
-    width:100%;
+margin-top:30px;
 
-    height:60px;
+padding:17px;
 
-    border-radius:18px;
+border-radius:18px;
 
-    font-size:18px;
+font-size:17px;
 
-    font-weight:700;
+font-weight:600;
 
-    color:#ffffff;
+background:linear-gradient(135deg,#EC4899,#7C3AED);
 
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
+color:#fff;
 
-    box-shadow:
-    0 10px 25px rgba(255,61,113,.35);
+box-shadow:0 10px 25px rgba(124,58,237,.35);
+
+transition:.3s;
 
 }
 
 #startButton:hover{
 
-    transform:translateY(-4px);
-
-}
-/* ======================================================
-   WELCOME SCREEN ANIMATIONS
-   PART 5
-====================================================== */
-
-/* Welcome Icon Animation */
-
-.welcomeIcon{
-
-animation:welcomeIconFloat 4s ease-in-out infinite;
-
-}
-
-@keyframes welcomeIconFloat{
-
-0%{
-
-transform:translateY(0px) scale(1);
-
-}
-
-50%{
-
-transform:translateY(-10px) scale(1.05);
-
-}
-
-100%{
-
-transform:translateY(0px) scale(1);
-
-}
-
-}
-
-/* Welcome Image Animation */
-
-.welcomeImage{
-
-animation:welcomeImageFloat 5s ease-in-out infinite;
-
-}
-
-@keyframes welcomeImageFloat{
-
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-
-/* Quote Card Animation */
-
-.quoteCard{
-
-animation:quoteCardGlow 3s ease-in-out infinite alternate;
-
-}
-
-@keyframes quoteCardGlow{
-
-from{
-
-box-shadow:
-
-0 0 15px rgba(255,255,255,.08);
-
-}
-
-to{
-
-box-shadow:
-
-0 0 35px rgba(255,152,0,.35),
-
-0 0 55px rgba(255,61,113,.20);
-
-}
-
-}
-
-/* Quote Fade */
-
-#quoteText{
-
-animation:quoteFade 4s ease-in-out infinite;
-
-}
-
-@keyframes quoteFade{
-
-0%{
-
-opacity:.4;
-
-}
-
-50%{
-
-opacity:1;
-
-}
-
-100%{
-
-opacity:.4;
-
-}
-
-}
-
-/* Get Started Button */
-
-#startButton{
-
-position:relative;
-
-overflow:hidden;
-
-transition:.35s;
-
-}
-
-#startButton:hover{
-
-transform:translateY(-5px) scale(1.03);
-
-box-shadow:
-
-0 0 20px rgba(255,61,113,.50),
-
-0 0 45px rgba(255,152,0,.40);
+transform:translateY(-2px);
 
 }
 
@@ -835,1084 +676,923 @@ transform:scale(.97);
 
 }
 
-/* Welcome Screen Fade */
-
-#welcomeScreen{
-
-animation:welcomeFade .8s ease;
-
-}
-
-@keyframes welcomeFade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0px);
-
-}
-
-}
-/* ======================================================
+/* =========================================================
+   END OF PART 3
+========================================================= */
+/* =========================================================
+   PART 4
    REGISTRATION SCREEN
-   PART 6
-====================================================== */
+========================================================= */
+
+/* ==========================================
+   REGISTRATION SCREEN
+========================================== */
 
 #registrationScreen{
 
-    position:relative;
+min-height:100vh;
 
-    overflow:hidden;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
 
 }
+
+/* ==========================================
+   REGISTER WRAPPER
+========================================== */
 
 .registerWrapper{
 
-    width:100%;
+width:100%;
 
-    max-width:430px;
+max-width:430px;
 
-    padding:25px;
+background:rgba(255,255,255,.08);
 
-    border-radius:30px;
+backdrop-filter:blur(18px);
 
-    background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:blur(20px);
+border-radius:28px;
 
-    border:1px solid rgba(255,255,255,.18);
+padding:30px 24px;
 
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.25);
+box-shadow:var(--shadow);
 
 }
 
+/* ==========================================
+   HEADER
+========================================== */
+
 .registerHeader{
 
-    text-align:center;
+text-align:center;
 
-    margin-bottom:30px;
+margin-bottom:28px;
 
 }
 
 .registerHeader h1{
 
-    font-size:32px;
+font-size:30px;
 
-    font-weight:700;
+font-weight:700;
 
-    color:#ffffff;
+margin-top:15px;
 
 }
 
 .registerHeader p{
 
-    margin-top:10px;
+margin-top:10px;
 
-    color:#eeeeee;
+font-size:15px;
 
-    line-height:1.6;
+color:var(--text2);
 
-    font-size:15px;
+line-height:1.6;
 
 }
+
+/* ==========================================
+   FORM
+========================================== */
 
 #registrationForm{
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    gap:18px;
+gap:18px;
 
 }
+
+/* ==========================================
+   INPUT BOX
+========================================== */
 
 .inputBox{
 
-    position:relative;
+display:flex;
 
-    display:flex;
+align-items:center;
 
-    align-items:center;
+gap:14px;
 
-    background:rgba(255,255,255,.12);
+padding:16px 18px;
 
-    border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.08);
 
-    border-radius:18px;
+border:1px solid rgba(255,255,255,.12);
 
-    transition:.35s;
+border-radius:18px;
 
-    overflow:hidden;
-
-}
-
-.inputBox:hover{
-
-    transform:translateY(-2px);
-
-    border-color:rgba(255,255,255,.35);
-
-    box-shadow:
-    0 0 20px rgba(255,255,255,.10);
+transition:.3s;
 
 }
 
 .inputBox:focus-within{
 
-    border-color:#ffd54f;
+border-color:#EC4899;
 
-    box-shadow:
-    0 0 25px rgba(255,213,79,.35);
+box-shadow:0 0 20px rgba(236,72,153,.25);
 
 }
+
+/* ==========================================
+   INPUT ICON
+========================================== */
 
 .inputBox i{
 
-    width:60px;
+font-size:20px;
 
-    text-align:center;
+color:#F9A8D4;
 
-    font-size:20px;
-
-    color:#ffd54f;
+min-width:22px;
 
 }
 
-.inputBox input{
+/* ==========================================
+   INPUT
+========================================== */
 
-    width:100%;
-
-    height:60px;
-
-    background:transparent;
-
-    color:#ffffff;
-
-    font-size:16px;
-
-    padding-right:18px;
-
-}
+.inputBox input,
 
 .inputBox textarea{
 
-    width:100%;
+width:100%;
 
-    min-height:110px;
+background:transparent;
 
-    background:transparent;
+color:#fff;
 
-    color:#ffffff;
-
-    font-size:16px;
-
-    padding:18px 18px 18px 0;
-
-    resize:none;
+font-size:15px;
 
 }
 
 .inputBox input::placeholder,
+
 .inputBox textarea::placeholder{
 
-    color:rgba(255,255,255,.75);
+color:#CBD5E1;
 
 }
 
+/* ==========================================
+   TEXTAREA
+========================================== */
+
+.inputBox textarea{
+
+height:90px;
+
+padding-top:4px;
+
+}
+
+/* ==========================================
+   CONTINUE BUTTON
+========================================== */
+
 #continueButton{
 
-    margin-top:15px;
+width:100%;
 
-    height:60px;
+margin-top:12px;
 
-    border-radius:18px;
+padding:17px;
 
-    font-size:18px;
+border-radius:18px;
 
-    font-weight:700;
+font-size:17px;
 
-    color:#ffffff;
+font-weight:600;
 
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
+background:linear-gradient(135deg,#7C3AED,#EC4899);
 
-    box-shadow:
-    0 10px 30px rgba(255,61,113,.35);
+color:#fff;
 
-    transition:.35s;
+box-shadow:0 10px 25px rgba(124,58,237,.35);
+
+transition:.3s;
 
 }
 
 #continueButton:hover{
 
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 25px rgba(255,61,113,.45),
-    0 0 45px rgba(255,152,0,.30);
-
-}
-/* ======================================================
-   REGISTRATION SCREEN ANIMATIONS
-   PART 7
-====================================================== */
-
-/* Glass Card Animation */
-
-.registerWrapper{
-
-    animation:registerFade .8s ease;
-
-}
-
-@keyframes registerFade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* Floating Header */
-
-.registerHeader h1{
-
-    animation:titleFloat 4s ease-in-out infinite;
-
-}
-
-@keyframes titleFloat{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* Input Animation */
-
-.inputBox{
-
-    animation:inputFade .8s ease;
-
-}
-
-@keyframes inputFade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(-20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
-}
-
-/* Icons */
-
-.inputBox i{
-
-    transition:.35s;
-
-}
-
-.inputBox:hover i{
-
-    color:#ffffff;
-
-    transform:scale(1.15);
-
-}
-
-/* Continue Button */
-
-#continueButton{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-#continueButton::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:60%;
-
-    height:100%;
-
-    background:rgba(255,255,255,.30);
-
-    transform:skewX(-25deg);
-
-    transition:.8s;
-
-}
-
-#continueButton:hover::before{
-
-    left:150%;
+transform:translateY(-2px);
 
 }
 
 #continueButton:active{
 
-    transform:scale(.97);
+transform:scale(.98);
 
 }
 
-/* Background Glow */
-
-#registrationScreen::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:320px;
-
-    height:320px;
-
-    border-radius:50%;
-
-    background:rgba(255,61,113,.15);
-
-    filter:blur(80px);
-
-    top:-120px;
-
-    left:-120px;
-
-    z-index:-1;
-
-}
-
-#registrationScreen::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:320px;
-
-    height:320px;
-
-    border-radius:50%;
-
-    background:rgba(37,99,235,.18);
-
-    filter:blur(90px);
-
-    right:-120px;
-
-    bottom:-120px;
-
-    z-index:-1;
-
-}
-/* ======================================================
+/* =========================================================
+   END OF PART 4
+========================================================= */
+/* =========================================================
+   PART 5
    OTP SCREEN
-   PART 8
-====================================================== */
+========================================================= */
+
+/* ==========================================
+   OTP SCREEN
+========================================== */
 
 #otpScreen{
 
-    position:relative;
+min-height:100vh;
 
-    overflow:hidden;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
 
 }
+
+/* ==========================================
+   OTP WRAPPER
+========================================== */
 
 .otpWrapper{
 
-    width:100%;
+width:100%;
 
-    max-width:430px;
+max-width:430px;
 
-    padding:28px;
+background:rgba(255,255,255,.08);
 
-    border-radius:30px;
+backdrop-filter:blur(18px);
 
-    background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:blur(20px);
+border-radius:28px;
 
-    border:1px solid rgba(255,255,255,.18);
+padding:35px 25px;
 
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.25);
-
-    animation:otpFade .8s ease;
+box-shadow:var(--shadow);
 
 }
 
-@keyframes otpFade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
+/* ==========================================
+   OTP HEADER
+========================================== */
 
 .otpHeader{
 
-    text-align:center;
+text-align:center;
+
+margin-bottom:30px;
 
 }
 
 .otpIcon{
 
-    width:95px;
+width:90px;
 
-    height:95px;
+height:90px;
 
-    border-radius:50%;
+margin:auto;
 
-    margin:auto;
+border-radius:50%;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
+background:linear-gradient(135deg,#EC4899,#7C3AED);
 
-    box-shadow:
-    0 0 25px rgba(255,61,113,.45);
+font-size:38px;
 
-    animation:otpIconFloat 3s ease-in-out infinite;
+color:#fff;
 
-}
-
-@keyframes otpIconFloat{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-8px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.otpIcon i{
-
-    font-size:42px;
-
-    color:#ffffff;
+box-shadow:0 0 30px rgba(236,72,153,.35);
 
 }
 
 .otpHeader h1{
 
-    margin-top:20px;
+margin-top:20px;
 
-    font-size:30px;
+font-size:28px;
 
-    color:#ffffff;
+font-weight:700;
 
 }
 
 .otpHeader p{
 
-    margin-top:10px;
+margin-top:10px;
 
-    color:#eeeeee;
+color:var(--text2);
 
-    line-height:1.6;
+line-height:1.6;
 
 }
+
+/* ==========================================
+   OTP CARD
+========================================== */
 
 .otpCard{
 
-    margin-top:35px;
+margin-top:20px;
 
 }
 
+/* ==========================================
+   OTP BOXES
+========================================== */
+
 .otpInputBox{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:10px;
+gap:10px;
+
+margin:30px 0;
 
 }
 
 .otpInputBox input{
 
-    width:55px;
+width:52px;
 
-    height:60px;
+height:58px;
 
-    border-radius:16px;
+border-radius:16px;
 
-    text-align:center;
+background:rgba(255,255,255,.08);
 
-    font-size:24px;
+border:1px solid rgba(255,255,255,.15);
 
-    font-weight:700;
+color:#fff;
 
-    color:#ffffff;
+font-size:22px;
 
-    background:rgba(255,255,255,.12);
+font-weight:700;
 
-    border:1px solid rgba(255,255,255,.18);
+text-align:center;
 
-    transition:.35s;
+transition:.3s;
 
 }
 
 .otpInputBox input:focus{
 
-    border-color:#ffd54f;
+border-color:#EC4899;
 
-    box-shadow:
-    0 0 18px rgba(255,213,79,.45);
+box-shadow:0 0 18px rgba(236,72,153,.30);
 
 }
+
+/* ==========================================
+   OTP INFO
+========================================== */
 
 .otpInfo{
 
-    text-align:center;
+text-align:center;
 
-    margin-top:20px;
+font-size:15px;
 
-    color:#f5f5f5;
+color:var(--text2);
 
-    font-size:15px;
+margin-bottom:25px;
 
 }
 
+#resendOtp{
+
+color:#F9A8D4;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+/* ==========================================
+   VERIFY BUTTON
+========================================== */
+
 #verifyOtpButton{
 
-    width:100%;
+width:100%;
 
-    height:60px;
+padding:17px;
 
-    margin-top:30px;
+border-radius:18px;
 
-    border-radius:18px;
+background:linear-gradient(135deg,#7C3AED,#EC4899);
 
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
+color:#fff;
 
-    color:#ffffff;
+font-size:17px;
 
-    font-size:18px;
+font-weight:600;
 
-    font-weight:700;
+box-shadow:0 10px 25px rgba(124,58,237,.35);
 
-    box-shadow:
-    0 10px 25px rgba(255,61,113,.35);
-
-    transition:.35s;
+transition:.3s;
 
 }
 
 #verifyOtpButton:hover{
 
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 20px rgba(255,61,113,.50),
-    0 0 40px rgba(255,152,0,.35);
+transform:translateY(-2px);
 
 }
 
 #verifyOtpButton:active{
 
-    transform:scale(.97);
+transform:scale(.98);
 
 }
-/* ======================================================
+
+/* =========================================================
+   END OF PART 5
+========================================================= */
+/* =========================================================
+   PART 6
    HOME DASHBOARD
-   PART 9
-====================================================== */
+========================================================= */
+
+/* ==========================================
+   HOME SCREEN
+========================================== */
 
 #homeScreen{
 
-    position:relative;
+min-height:100vh;
 
-    overflow:hidden;
-
-    padding:25px;
+padding:20px 18px 120px;
 
 }
+
+/* ==========================================
+   HOME WRAPPER
+========================================== */
 
 .homeWrapper{
 
-    width:100%;
+width:100%;
 
-    max-width:460px;
+max-width:430px;
 
-    margin:auto;
+margin:auto;
 
 }
 
-/* =======================================
+/* ==========================================
    HEADER
-======================================= */
+========================================== */
 
 .homeHeader{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
 
-    margin-bottom:30px;
+margin-bottom:20px;
 
 }
+
+/* ==========================================
+   PROFILE AREA
+========================================== */
 
 .profileArea{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:15px;
+gap:14px;
 
 }
+
+/* ==========================================
+   PROFILE IMAGE
+========================================== */
 
 .profileImage{
 
-    width:65px;
+width:58px;
 
-    height:65px;
+height:58px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:linear-gradient(
-    135deg,
-    #ff3d71,
-    #ff9800);
+display:flex;
 
-    display:flex;
+justify-content:center;
 
-    justify-content:center;
+align-items:center;
 
-    align-items:center;
+background:linear-gradient(135deg,#EC4899,#7C3AED);
 
-    box-shadow:
-    0 0 20px rgba(255,61,113,.45);
+color:#ffffff;
 
-}
+font-size:24px;
 
-.profileImage i{
-
-    font-size:28px;
-
-    color:#ffffff;
+box-shadow:0 8px 20px rgba(124,58,237,.35);
 
 }
 
-.profileArea h2{
+/* ==========================================
+   USER NAME
+========================================== */
 
-    font-size:24px;
+#userName{
 
-    font-weight:700;
+font-size:22px;
 
-    color:#ffffff;
+font-weight:700;
 
 }
 
 .profileArea p{
 
-    margin-top:5px;
+font-size:14px;
 
-    font-size:14px;
+margin-top:4px;
 
-    color:#dddddd;
+color:var(--text2);
 
 }
 
-/* =======================================
-   NOTIFICATION
-======================================= */
+/* ==========================================
+   NOTIFICATION BUTTON
+========================================== */
 
 #notificationButton{
 
-    width:55px;
+width:52px;
 
-    height:55px;
+height:52px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:rgba(255,255,255,.12);
+background:rgba(255,255,255,.10);
 
-    border:1px solid rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.15);
 
-    color:#ffffff;
+display:flex;
 
-    font-size:22px;
+justify-content:center;
 
-    backdrop-filter:blur(15px);
+align-items:center;
 
-    transition:.35s;
+color:#ffffff;
 
-}
-
-#notificationButton:hover{
-
-    transform:rotate(15deg) scale(1.08);
-
-    background:rgba(255,255,255,.20);
+font-size:20px;
 
 }
 
-/* =======================================
-   DAILY QUOTE
-======================================= */
+/* ==========================================
+   COMMON GLASS CARD
+========================================== */
 
 .dailyQuote{
 
-    margin-bottom:28px;
+background:rgba(255,255,255,.08);
 
-    padding:22px;
+border:1px solid rgba(255,255,255,.15);
 
-    border-radius:24px;
+backdrop-filter:blur(18px);
 
-    background:rgba(255,255,255,.10);
+border-radius:22px;
 
-    backdrop-filter:blur(20px);
+padding:20px;
 
-    border:1px solid rgba(255,255,255,.15);
+margin-bottom:18px;
 
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.18);
+box-shadow:var(--shadow);
 
 }
+
+/* ==========================================
+   CARD TITLE
+========================================== */
 
 .dailyQuote h3{
 
-    color:#ffd54f;
+font-size:18px;
 
-    font-size:18px;
+font-weight:600;
 
-    margin-bottom:12px;
+margin-bottom:12px;
 
 }
+
+/* ==========================================
+   CARD TEXT
+========================================== */
 
 .dailyQuote p{
 
-    line-height:1.8;
+font-size:15px;
 
-    color:#ffffff;
+line-height:1.8;
 
-    font-style:italic;
-
-}
-
-/* =======================================
-   HOME FADE
-======================================= */
-
-.homeWrapper{
-
-    animation:homeFade .8s ease;
+color:var(--text2);
 
 }
 
-@keyframes homeFade{
+/* ==========================================
+   SAFETY SCORE
+========================================== */
 
-    from{
+#safetyScore{
 
-        opacity:0;
+font-size:36px;
 
-        transform:translateY(25px);
+font-weight:700;
 
-    }
+color:#22C55E;
 
-    to{
+}
 
-        opacity:1;
+/* ==========================================
+   MAP CONTAINER
+========================================== */
 
-        transform:translateY(0);
+#liveMapContainer{
 
-    }
+width:100%;
 
-   }
-/* ======================================================
-   HOME MENU + SOS BUTTON
-   PART 10
-====================================================== */
+height:250px;
 
-/* =======================================
-   MENU GRID
-======================================= */
+border-radius:22px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+overflow:hidden;
+
+margin-bottom:18px;
+
+box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   VIEW MAP BUTTON
+========================================== */
+
+#viewMapButton{
+
+width:100%;
+
+margin-top:16px;
+
+padding:15px;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#7C3AED,#EC4899);
+
+color:#ffffff;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+#viewMapButton:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* =========================================================
+   END OF PART 6
+========================================================= */
+/* =========================================================
+   PART 7
+   FEATURE CARDS + DEVICE + SOS
+========================================================= */
+
+/* ==========================================
+   FEATURE GRID
+========================================== */
 
 .menuGrid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
-    gap:18px;
+gap:16px;
 
-    margin-top:20px;
+margin-bottom:20px;
 
 }
 
-/* =======================================
-   MENU CARD
-======================================= */
+/* ==========================================
+   FEATURE CARD
+========================================== */
 
 .menuCard{
 
-    background:rgba(255,255,255,.10);
+background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.18);
+backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
 
-    border-radius:22px;
+border-radius:22px;
 
-    padding:22px 15px;
+padding:22px 16px;
 
-    text-align:center;
+text-align:center;
 
-    transition:.35s;
+cursor:pointer;
 
-    cursor:pointer;
+transition:.35s;
 
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.15);
+box-shadow:var(--shadow);
 
 }
 
 .menuCard:hover{
 
-    transform:translateY(-8px);
+transform:translateY(-6px);
 
-    background:rgba(255,255,255,.18);
+border-color:#EC4899;
 
-    box-shadow:
-
-    0 0 25px rgba(255,255,255,.15),
-
-    0 0 45px rgba(255,61,113,.18);
+box-shadow:0 15px 35px rgba(236,72,153,.25);
 
 }
+
+.menuCard:active{
+
+transform:scale(.97);
+
+}
+
+/* ==========================================
+   CARD ICON
+========================================== */
 
 .menuCard i{
 
-    font-size:34px;
+font-size:34px;
 
-    color:#ffd54f;
+margin-bottom:14px;
 
-    margin-bottom:15px;
+background:linear-gradient(135deg,#EC4899,#7C3AED);
 
-    transition:.35s;
+-webkit-background-clip:text;
 
-}
-
-.menuCard:hover i{
-
-    transform:scale(1.15);
-
-    color:#ffffff;
+-webkit-text-fill-color:transparent;
 
 }
+
+/* ==========================================
+   CARD TITLE
+========================================== */
 
 .menuCard h3{
 
-    font-size:16px;
+font-size:16px;
 
-    font-weight:600;
+font-weight:600;
 
-    color:#ffffff;
+color:#ffffff;
 
-    line-height:1.5;
+line-height:1.4;
 
 }
 
-/* =======================================
+/* ==========================================
+   DEVICE STATUS CARD
+========================================== */
+
+#deviceStatusCard{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:22px;
+
+padding:20px;
+
+margin-bottom:20px;
+
+box-shadow:var(--shadow);
+
+}
+
+#deviceStatusCard h3{
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+#deviceStatusCard p{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:10px;
+
+font-size:15px;
+
+color:var(--text2);
+
+}
+
+/* ==========================================
    SOS SECTION
-======================================= */
+========================================== */
 
 .sosContainer{
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    margin-top:45px;
-
-    margin-bottom:100px;
+margin:35px 0;
 
 }
+
+/* ==========================================
+   SOS BUTTON
+========================================== */
 
 #sosButton{
 
-    width:140px;
+width:150px;
 
-    height:140px;
+height:150px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    border:none;
+border:none;
 
-    outline:none;
+background:linear-gradient(135deg,#EF4444,#DC2626);
 
-    background:linear-gradient(
+color:#ffffff;
 
-    135deg,
+font-size:34px;
 
-    #ff1744,
+font-weight:700;
 
-    #ff5252,
+letter-spacing:2px;
 
-    #ff9800
+cursor:pointer;
 
-    );
+box-shadow:
 
-    color:#ffffff;
+0 0 20px rgba(239,68,68,.40),
 
-    font-size:34px;
+0 0 45px rgba(239,68,68,.30),
 
-    font-weight:800;
+0 0 70px rgba(239,68,68,.20);
 
-    letter-spacing:2px;
+animation:sosPulse 2s infinite;
 
-    cursor:pointer;
-
-    position:relative;
-
-    overflow:hidden;
-
-    animation:sosPulse 2s infinite;
-
-    box-shadow:
-
-    0 0 25px rgba(255,23,68,.55),
-
-    0 0 55px rgba(255,82,82,.45),
-
-    0 0 90px rgba(255,152,0,.35);
-
-}
-
-@keyframes sosPulse{
-
-0%{
-
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.08);
-
-}
-
-100%{
-
-transform:scale(1);
-
-}
+transition:.3s;
 
 }
 
 #sosButton:hover{
 
-transform:scale(1.08);
-
-box-shadow:
-
-0 0 35px rgba(255,23,68,.70),
-
-0 0 70px rgba(255,82,82,.55),
-
-0 0 110px rgba(255,152,0,.45);
+transform:scale(1.06);
 
 }
 
@@ -1921,482 +1601,1065 @@ box-shadow:
 transform:scale(.95);
 
 }
-/* ======================================================
-   BOTTOM NAVIGATION
-   PART 11
-====================================================== */
 
-/* ==============================
-   Bottom Navigation
-================================ */
+/* ==========================================
+   SOS ANIMATION
+========================================== */
+
+@keyframes sosPulse{
+
+0%{
+
+box-shadow:
+
+0 0 20px rgba(239,68,68,.40),
+
+0 0 45px rgba(239,68,68,.30);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 35px rgba(239,68,68,.70),
+
+0 0 80px rgba(239,68,68,.50);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px rgba(239,68,68,.40),
+
+0 0 45px rgba(239,68,68,.30);
+
+}
+
+}
+
+/* =========================================================
+   END OF PART 7
+========================================================= */
+/* =========================================================
+   PART 8
+   PROFILE + TRUSTED CONTACTS + TIMELINE
+========================================================= */
+
+/* ==========================================
+   PROFILE SCREEN
+========================================== */
+
+#profileScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+#profileScreen .dailyQuote p{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin:10px 0;
+
+font-size:15px;
+
+color:var(--text2);
+
+}
+
+#profileScreen b{
+
+color:#ffffff;
+
+font-weight:600;
+
+}
+
+/* ==========================================
+   TRUSTED CONTACTS
+========================================== */
+
+#trustedContactsScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+#trustedContactsList{
+
+margin-bottom:20px;
+
+}
+
+#trustedContactsList .dailyQuote{
+
+text-align:center;
+
+}
+
+#trustedContactsList h3{
+
+margin-bottom:10px;
+
+}
+
+/* ==========================================
+   TIMELINE SCREEN
+========================================== */
+
+#timelineScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+#timelineList{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-bottom:20px;
+
+}
+
+/* ==========================================
+   TIMELINE CARD
+========================================== */
+
+.timelineCard{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:20px;
+
+padding:18px;
+
+backdrop-filter:blur(18px);
+
+box-shadow:var(--shadow);
+
+}
+
+.timelineCard h3{
+
+font-size:17px;
+
+margin-bottom:8px;
+
+color:#ffffff;
+
+}
+
+.timelineCard p{
+
+font-size:14px;
+
+color:var(--text2);
+
+line-height:1.7;
+
+}
+
+/* ==========================================
+   MAP PREVIEW
+========================================== */
+
+#timelineMapPreview{
+
+width:100%;
+
+height:220px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+overflow:hidden;
+
+margin-top:15px;
+
+box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   SUMMARY NUMBERS
+========================================== */
+
+#todayEventsCount,
+#journeyCount,
+#sosHistoryCount{
+
+font-weight:700;
+
+color:#22C55E;
+
+}
+
+/* =========================================================
+   END OF PART 8
+========================================================= */
+/* =========================================================
+   PART 9
+   VOLUNTEER + DEVICE + SETTINGS
+========================================================= */
+
+/* ==========================================
+   VOLUNTEER SCREEN
+========================================== */
+
+#volunteerScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+#volunteerStatus,
+#volunteerAvailability,
+#volunteerHelpCount{
+
+font-weight:700;
+
+color:#22C55E;
+
+}
+
+/* ==========================================
+   DEVICE SCREEN
+========================================== */
+
+#deviceScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+#deviceLogsContainer{
+
+margin-top:20px;
+
+}
+
+#deviceLogsContainer .dailyQuote{
+
+text-align:left;
+
+}
+
+/* ==========================================
+   DEVICE VALUES
+========================================== */
+
+#deviceConnection,
+#deviceBattery,
+#deviceSignal,
+#deviceBluetooth,
+#deviceWakeWord,
+#deviceEmergencyButton,
+#deviceLastSync{
+
+font-weight:700;
+
+color:#60A5FA;
+
+}
+
+/* ==========================================
+   SETTINGS SCREEN
+========================================== */
+
+#settingsScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+.settingsContainer{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+/* ==========================================
+   SETTING ITEM
+========================================== */
+
+.settingItem{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(18px);
+
+box-shadow:var(--shadow);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.settingItem:hover{
+
+transform:translateY(-3px);
+
+border-color:#EC4899;
+
+}
+
+.settingItem h3{
+
+font-size:16px;
+
+margin-bottom:6px;
+
+color:#ffffff;
+
+}
+
+.settingItem p{
+
+font-size:14px;
+
+color:var(--text2);
+
+}
+
+.settingItem i{
+
+font-size:20px;
+
+color:#F9A8D4;
+
+}
+
+/* ==========================================
+   VERSION CARD
+========================================== */
+
+#settingsScreen .dailyQuote{
+
+margin-top:25px;
+
+text-align:center;
+
+}
+
+/* =========================================================
+   END OF PART 9
+========================================================= */
+/* =========================================================
+   PART 10
+   MAP SCREEN + SOS PANEL
+========================================================= */
+
+/* ==========================================
+   LIVE MAP SCREEN
+========================================== */
+
+#mapScreen{
+
+min-height:100vh;
+
+padding:20px 18px 120px;
+
+}
+
+/* ==========================================
+   FULL LIVE MAP
+========================================== */
+
+#fullLiveMapContainer{
+
+width:100%;
+
+height:420px;
+
+margin-top:20px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   NEARBY VOLUNTEERS
+========================================== */
+
+#nearbyVolunteerList{
+
+margin-top:15px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.volunteerItem{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:16px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:18px;
+
+backdrop-filter:blur(16px);
+
+}
+
+.volunteerItem h4{
+
+font-size:16px;
+
+color:#ffffff;
+
+margin-bottom:4px;
+
+}
+
+.volunteerItem p{
+
+font-size:13px;
+
+color:var(--text2);
+
+}
+
+/* ==========================================
+   EMERGENCY RESPONSE
+========================================== */
+
+#emergencyResponseStatus{
+
+font-weight:700;
+
+color:#22C55E;
+
+}
+
+#acceptedVolunteerName{
+
+font-weight:600;
+
+color:#FBBF24;
+
+}
+
+#volunteerETA{
+
+font-weight:700;
+
+color:#60A5FA;
+
+}
+
+/* ==========================================
+   ACTIVE SOS PANEL
+========================================== */
+
+#activeSOSPanel{
+
+margin-top:25px;
+
+padding:24px;
+
+border-radius:24px;
+
+background:linear-gradient(
+135deg,
+#B91C1C,
+#DC2626
+);
+
+text-align:center;
+
+color:#ffffff;
+
+box-shadow:
+
+0 15px 40px rgba(220,38,38,.35);
+
+animation:sosPanelGlow 2s infinite;
+
+}
+
+#activeSOSPanel h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+letter-spacing:2px;
+
+}
+
+#activeSOSPanel p{
+
+font-size:15px;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+color:#ffffff;
+
+}
+
+/* ==========================================
+   CANCEL SOS BUTTON
+========================================== */
+
+#cancelSOSButton{
+
+width:100%;
+
+padding:16px;
+
+border-radius:18px;
+
+background:#ffffff;
+
+color:#DC2626;
+
+font-size:17px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+#cancelSOSButton:hover{
+
+transform:translateY(-2px);
+
+}
+
+#cancelSOSButton:active{
+
+transform:scale(.97);
+
+}
+
+/* ==========================================
+   SOS PANEL ANIMATION
+========================================== */
+
+@keyframes sosPanelGlow{
+
+0%{
+
+box-shadow:
+
+0 0 20px rgba(220,38,38,.30);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 45px rgba(220,38,38,.60);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px rgba(220,38,38,.30);
+
+}
+
+}
+
+/* =========================================================
+   END OF PART 10
+========================================================= */
+/* =========================================================
+   PART 11
+   BOTTOM NAVIGATION + POPUP + FOOTER
+========================================================= */
+
+/* ==========================================
+   BOTTOM NAVIGATION
+========================================== */
 
 #bottomNavigation{
 
-    position:fixed;
+position:fixed;
 
-    left:0;
+left:0;
 
-    bottom:0;
+bottom:0;
 
-    width:100%;
+width:100%;
 
-    display:flex;
+padding:14px 18px;
 
-    justify-content:center;
+background:rgba(20,20,35,.92);
 
-    align-items:center;
+backdrop-filter:blur(18px);
 
-    z-index:999;
+border-top:1px solid rgba(255,255,255,.10);
+
+z-index:999;
 
 }
+
+/* ==========================================
+   NAV CONTAINER
+========================================== */
 
 .bottomNavContainer{
 
-    width:100%;
+max-width:430px;
 
-    max-width:480px;
+margin:auto;
 
-    height:80px;
+display:flex;
 
-    display:flex;
+justify-content:space-between;
 
-    justify-content:space-around;
-
-    align-items:center;
-
-    margin:0 15px 15px;
-
-    border-radius:28px;
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    box-shadow:
-
-    0 10px 35px rgba(0,0,0,.30);
+align-items:center;
 
 }
 
+/* ==========================================
+   NAV BUTTON
+========================================== */
+
 .navButton{
 
-    width:60px;
+background:none;
 
-    height:60px;
+border:none;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    justify-content:center;
+align-items:center;
 
-    align-items:center;
+justify-content:center;
 
-    background:transparent;
+gap:5px;
 
-    color:#ffffff;
+color:#CBD5E1;
 
-    border:none;
+font-size:13px;
 
-    transition:.35s;
+cursor:pointer;
+
+transition:.3s;
 
 }
 
 .navButton i{
 
-    font-size:22px;
-
-}
-
-.navButton span{
-
-    margin-top:4px;
-
-    font-size:11px;
+font-size:22px;
 
 }
 
 .navButton:hover{
 
-    transform:translateY(-5px);
+color:#ffffff;
 
-    color:#ffd54f;
+transform:translateY(-2px);
 
 }
 
 .navButton.active{
 
-    color:#ffd54f;
+color:#EC4899;
 
 }
 
+/* ==========================================
+   CENTER SOS NAV BUTTON
+========================================== */
+
 .centerButton{
 
-    width:72px;
+width:64px;
 
-    height:72px;
+height:64px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:linear-gradient(
+background:linear-gradient(135deg,#EF4444,#DC2626);
 
-    135deg,
+color:#ffffff;
 
-    #ff3d71,
+box-shadow:
 
-    #ff9800
+0 0 20px rgba(239,68,68,.45);
 
-    );
-
-    color:#ffffff;
-
-    box-shadow:
-
-    0 0 25px rgba(255,61,113,.45);
+margin-top:-35px;
 
 }
 
 .centerButton i{
 
-    font-size:30px;
+font-size:26px;
 
 }
 
-/* ==============================
-   POPUP
-================================ */
+/* ==========================================
+   PREMIUM POPUP
+========================================== */
 
 #popupScreen{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+top:0;
 
-    background:rgba(0,0,0,.65);
+left:0;
 
-    display:flex;
+width:100%;
 
-    justify-content:center;
+height:100%;
 
-    align-items:center;
+background:rgba(0,0,0,.65);
 
-    z-index:2000;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
+
+z-index:9999;
 
 }
+
+/* ==========================================
+   POPUP CONTAINER
+========================================== */
 
 .popupContainer{
 
-    width:90%;
+width:100%;
 
-    max-width:360px;
+max-width:360px;
 
-    padding:30px;
+background:rgba(255,255,255,.10);
 
-    border-radius:30px;
+backdrop-filter:blur(20px);
 
-    text-align:center;
+border:1px solid rgba(255,255,255,.15);
 
-    background:rgba(255,255,255,.12);
+border-radius:28px;
 
-    backdrop-filter:blur(18px);
+padding:30px 25px;
 
-    border:1px solid rgba(255,255,255,.20);
+text-align:center;
+
+box-shadow:var(--shadow);
+
+animation:popupAnimation .35s ease;
 
 }
+
+@keyframes popupAnimation{
+
+from{
+
+opacity:0;
+
+transform:scale(.85);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   POPUP ICON
+========================================== */
 
 .popupIcon{
 
-    font-size:65px;
+width:80px;
 
-    color:#4CAF50;
+height:80px;
 
-    margin-bottom:15px;
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#7C3AED,#EC4899);
+
+font-size:34px;
+
+color:#ffffff;
+
+margin-bottom:18px;
 
 }
 
+/* ==========================================
+   POPUP TEXT
+========================================== */
+
 #popupTitle{
 
-    font-size:28px;
+font-size:26px;
 
-    color:#ffffff;
+margin-bottom:12px;
 
 }
 
 #popupMessage{
 
-    margin-top:15px;
+font-size:15px;
 
-    line-height:1.7;
+line-height:1.7;
 
-    color:#eeeeee;
+color:var(--text2);
+
+margin-bottom:25px;
 
 }
+
+/* ==========================================
+   POPUP BUTTON
+========================================== */
 
 #popupButton{
 
-    width:100%;
+width:100%;
 
-    height:56px;
+padding:15px;
 
-    margin-top:25px;
+border-radius:18px;
 
-    border-radius:18px;
+background:linear-gradient(135deg,#7C3AED,#EC4899);
 
-    background:linear-gradient(
+color:#ffffff;
 
-    135deg,
+font-size:16px;
 
-    #ff3d71,
-
-    #ff9800
-
-    );
-
-    color:#ffffff;
-
-    font-size:18px;
-
-    font-weight:700;
+font-weight:600;
 
 }
 
-/* ==============================
-   PAGE LOADER
-================================ */
+/* ==========================================
+   FOOTER
+========================================== */
 
-#pageLoader{
+#appFooter{
 
-    position:fixed;
+padding:40px 20px 120px;
 
-    inset:0;
-
-    background:#1a093d;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:3000;
+text-align:center;
 
 }
 
-.loaderCircle{
+.footerContent h3{
 
-    width:70px;
+font-size:26px;
 
-    height:70px;
-
-    border-radius:50%;
-
-    border:6px solid rgba(255,255,255,.20);
-
-    border-top-color:#ffd54f;
-
-    animation:loaderSpin 1s linear infinite;
+margin-bottom:12px;
 
 }
 
-@keyframes loaderSpin{
+.footerContent p{
 
-    from{
+margin-top:10px;
 
-        transform:rotate(0deg);
+font-size:15px;
 
-    }
+color:var(--text2);
 
-    to{
-
-        transform:rotate(360deg);
-
-    }
+line-height:1.8;
 
 }
-/* ======================================================
-   BACKGROUND EFFECTS + RESPONSIVE
+
+.developerCredit{
+
+font-weight:600;
+
+color:#ffffff;
+
+}
+/* =========================================================
    PART 12
-====================================================== */
+   RESPONSIVE DESIGN
+========================================================= */
 
-/* ==============================
-   PARTICLE BACKGROUND
-================================ */
+/* ==========================================
+   SMOOTH ANIMATION
+========================================== */
 
-#particlesBackground{
+html{
 
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    z-index:-1;
+scroll-behavior:smooth;
 
 }
 
-#particlesBackground::before{
+*{
 
-    content:"";
-
-    position:absolute;
-
-    width:450px;
-
-    height:450px;
-
-    border-radius:50%;
-
-    background:rgba(255,61,113,.12);
-
-    filter:blur(120px);
-
-    top:-120px;
-
-    left:-120px;
-
-    animation:particleMove1 12s ease-in-out infinite;
+-webkit-tap-highlight-color:transparent;
 
 }
 
-#particlesBackground::after{
+/* ==========================================
+   SMOOTH TRANSITIONS
+========================================== */
 
-    content:"";
+section,
+button,
+.menuCard,
+.dailyQuote,
+.inputBox,
+.settingItem,
+.timelineCard,
+.popupContainer{
 
-    position:absolute;
-
-    width:420px;
-
-    height:420px;
-
-    border-radius:50%;
-
-    background:rgba(37,99,235,.15);
-
-    filter:blur(120px);
-
-    bottom:-120px;
-
-    right:-120px;
-
-    animation:particleMove2 15s ease-in-out infinite;
+transition:.30s ease;
 
 }
 
-@keyframes particleMove1{
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
 
-0%{
+::-webkit-scrollbar{
 
-transform:translate(0,0);
-
-}
-
-50%{
-
-transform:translate(60px,40px);
+width:8px;
 
 }
 
-100%{
+::-webkit-scrollbar-track{
 
-transform:translate(0,0);
-
-}
+background:#1E1B4B;
 
 }
 
-@keyframes particleMove2{
+::-webkit-scrollbar-thumb{
 
-0%{
+background:#7C3AED;
 
-transform:translate(0,0);
-
-}
-
-50%{
-
-transform:translate(-60px,-40px);
+border-radius:20px;
 
 }
 
-100%{
+::-webkit-scrollbar-thumb:hover{
 
-transform:translate(0,0);
-
-}
+background:#EC4899;
 
 }
 
-/* ==============================
-   GLASS EFFECT
-================================ */
+/* ==========================================
+   MOBILE (UP TO 480PX)
+========================================== */
 
-.glass{
+@media(max-width:480px){
 
-background:rgba(255,255,255,.12);
+.loadingContainer,
+.welcomeWrapper,
+.registerWrapper,
+.otpWrapper,
+.homeWrapper{
 
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.18);
-
-box-shadow:
-
-0 15px 40px rgba(0,0,0,.20);
+max-width:100%;
 
 }
 
-/* ==============================
-   RESPONSIVE
-================================ */
+.logoContainer{
 
-@media(max-width:768px){
-
-.loadingContainer h1{
-
-font-size:34px;
+transform:scale(.90);
 
 }
 
-.loadingContainer h3{
-
-font-size:18px;
-
-}
-
-.welcomeTop h1{
-
-font-size:30px;
-
-}
-
-.registerHeader h1{
-
-font-size:28px;
-
-}
-
+.welcomeWrapper h1,
+.registerHeader h1,
 .otpHeader h1{
 
-font-size:28px;
-
-}
-
-.profileArea h2{
-
-font-size:20px;
+font-size:26px;
 
 }
 
 .menuGrid{
+
+grid-template-columns:repeat(2,1fr);
 
 gap:14px;
 
@@ -2408,137 +2671,146 @@ padding:18px 12px;
 
 }
 
+.menuCard i{
+
+font-size:30px;
+
+}
+
 #sosButton{
 
-width:120px;
+width:130px;
 
-height:120px;
+height:130px;
 
 font-size:28px;
 
 }
 
-.bottomNavContainer{
+#fullLiveMapContainer{
 
-height:74px;
-
-}
-
-.centerButton{
-
-width:66px;
-
-height:66px;
+height:300px;
 
 }
 
-}
+#liveMapContainer{
 
-/* ==============================
-   SMALL MOBILE
-================================ */
-
-@media(max-width:420px){
-
-section{
-
-padding:18px;
+height:220px;
 
 }
 
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media(min-width:768px){
+
+.homeWrapper,
 .registerWrapper,
+.welcomeWrapper,
 .otpWrapper{
 
-padding:22px;
+max-width:700px;
 
 }
 
-.otpInputBox input{
+.menuGrid{
 
-width:46px;
-
-height:54px;
-
-font-size:20px;
+grid-template-columns:repeat(3,1fr);
 
 }
 
-.welcomeImage{
+#bottomNavigation{
 
-width:190px;
+display:flex;
 
-height:190px;
+justify-content:center;
+
+}
+
+.bottomNavContainer{
+
+max-width:700px;
 
 }
 
 }
-/* ======================================================
-   FINAL PREMIUM POLISH
-   PART 13
-====================================================== */
 
-/* Smooth Animation */
+/* ==========================================
+   LARGE DEVICES
+========================================== */
 
-*{
+@media(min-width:1200px){
 
-transition:
-
-background .35s ease,
-
-color .35s ease,
-
-transform .35s ease,
-
-box-shadow .35s ease,
-
-border .35s ease;
-
-}
-
-/* Premium Scroll */
-
-body{
-
-scroll-behavior:smooth;
-
-}
-
-/* Beautiful Card Hover */
-
-.menuCard,
-.quoteCard,
+.homeWrapper,
 .registerWrapper,
-.otpWrapper,
+.welcomeWrapper,
+.otpWrapper{
+
+max-width:900px;
+
+}
+
+.menuGrid{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+/* ==========================================
+   IMAGE RESPONSIVE
+========================================== */
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+/* ==========================================
+   BUTTON FOCUS
+========================================== */
+
+button:focus{
+
+outline:none;
+
+}
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+
+input:focus,
+textarea:focus{
+
+outline:none;
+
+}
+
+/* =========================================================
+   END OF PART 12
+========================================================= */
+/* =========================================================
+   PART 13
+   ADVANCED UI EFFECTS
+========================================================= */
+
+/* ==========================================
+   GLASS HOVER EFFECT
+========================================== */
+
 .dailyQuote,
+.menuCard,
+.settingItem,
+.timelineCard,
 .popupContainer{
-
-transition:.4s ease;
-
-}
-
-.menuCard:hover,
-.quoteCard:hover,
-.registerWrapper:hover,
-.otpWrapper:hover,
-.dailyQuote:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-
-0 18px 45px rgba(0,0,0,.28),
-
-0 0 25px rgba(255,255,255,.10);
-
-}
-
-/* Button Shine */
-
-#startButton,
-#continueButton,
-#verifyOtpButton,
-#popupButton,
-#sosButton{
 
 position:relative;
 
@@ -2546,11 +2818,10 @@ overflow:hidden;
 
 }
 
-#startButton::before,
-#continueButton::before,
-#verifyOtpButton::before,
-#popupButton::before,
-#sosButton::before{
+.dailyQuote::before,
+.menuCard::before,
+.settingItem::before,
+.timelineCard::before{
 
 content:"";
 
@@ -2560,51 +2831,57 @@ top:0;
 
 left:-120%;
 
-width:45%;
+width:70%;
 
 height:100%;
 
-background:
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.18),
+transparent
+);
 
-rgba(255,255,255,.30);
-
-transform:skewX(-25deg);
-
-transition:.9s;
-
-}
-
-#startButton:hover::before,
-#continueButton:hover::before,
-#verifyOtpButton:hover::before,
-#popupButton:hover::before,
-#sosButton:hover::before{
-
-left:160%;
+transition:.8s;
 
 }
 
-/* Input Hover */
+.dailyQuote:hover::before,
+.menuCard:hover::before,
+.settingItem:hover::before,
+.timelineCard:hover::before{
 
-.inputBox:hover{
-
-background:
-
-rgba(255,255,255,.16);
-
-}
-
-/* Floating Effect */
-
-.profileImage,
-.welcomeIcon,
-.mainLogo{
-
-animation:floatingAnimation 5s ease-in-out infinite;
+left:140%;
 
 }
 
-@keyframes floatingAnimation{
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.dailyQuote:hover{
+
+transform:translateY(-4px);
+
+}
+
+.timelineCard:hover{
+
+transform:translateY(-4px);
+
+}
+
+.settingItem:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   FLOAT ANIMATION
+========================================== */
+
+@keyframes floating{
 
 0%{
 
@@ -2626,58 +2903,147 @@ transform:translateY(0px);
 
 }
 
-/* Text Glow */
+.profileImage{
 
-.loadingContainer h1,
-.welcomeTop span{
-
-text-shadow:
-
-0 0 12px rgba(255,255,255,.35),
-
-0 0 24px rgba(255,213,79,.25);
+animation:floating 4s ease-in-out infinite;
 
 }
 
-/* Image Hover */
+/* ==========================================
+   FADE UP
+========================================== */
 
-.welcomeImage img{
+@keyframes fadeUp{
 
-transition:.5s;
+from{
+
+opacity:0;
+
+transform:translateY(25px);
 
 }
 
-.welcomeImage:hover img{
+to{
 
-transform:scale(1.08);
+opacity:1;
+
+transform:translateY(0);
 
 }
 
-/* Notification */
+}
 
-#notificationButton:hover{
+section{
+
+animation:fadeUp .45s ease;
+
+}
+
+/* ==========================================
+   GLOW ICONS
+========================================== */
+
+.menuCard i{
+
+filter:drop-shadow(
+0 0 10px
+rgba(236,72,153,.35)
+);
+
+}
+
+/* ==========================================
+   BUTTON GLOW
+========================================== */
+
+#continueButton,
+#verifyOtpButton,
+#viewMapButton,
+#popupButton,
+#startButton{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#continueButton::after,
+#verifyOtpButton::after,
+#viewMapButton::after,
+#popupButton::after,
+#startButton::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+
+transition:.7s;
+
+}
+
+#continueButton:hover::after,
+#verifyOtpButton:hover::after,
+#viewMapButton:hover::after,
+#popupButton:hover::after,
+#startButton:hover::after{
+
+left:100%;
+
+}
+
+/* ==========================================
+   MAP SHADOW
+========================================== */
+
+#liveMapContainer,
+#fullLiveMapContainer{
 
 box-shadow:
 
-0 0 18px rgba(255,255,255,.25);
+0 15px 35px rgba(0,0,0,.25),
+
+0 0 25px rgba(124,58,237,.20);
 
 }
 
-/* Active Click */
+/* ==========================================
+   INPUT CARET
+========================================== */
 
-button:active{
+input,
+textarea{
 
-transform:scale(.96);
+caret-color:#EC4899;
 
 }
-/* ======================================================
-   UTILITY CLASSES & FINAL OPTIMIZATION
+
+/* =========================================================
+   END OF PART 13
+========================================================= */
+/* =========================================================
    PART 14
-====================================================== */
+   UTILITY CLASSES + FINAL OPTIMIZATION
+========================================================= */
 
-/* ==============================
+/* ==========================================
    FLEX UTILITIES
-================================ */
+========================================== */
 
 .flex{
 
@@ -2713,9 +3079,9 @@ flex-direction:column;
 
 }
 
-/* ==============================
-   TEXT UTILITIES
-================================ */
+/* ==========================================
+   TEXT ALIGN
+========================================== */
 
 .textCenter{
 
@@ -2723,33 +3089,21 @@ text-align:center;
 
 }
 
-.textWhite{
+.textLeft{
 
-color:#ffffff;
-
-}
-
-.textGold{
-
-color:#ffd54f;
+text-align:left;
 
 }
 
-.textGray{
+.textRight{
 
-color:#dddddd;
-
-}
-
-.textBold{
-
-font-weight:700;
+text-align:right;
 
 }
 
-/* ==============================
+/* ==========================================
    SPACING
-================================ */
+========================================== */
 
 .mt10{
 
@@ -2766,12 +3120,6 @@ margin-top:20px;
 .mt30{
 
 margin-top:30px;
-
-}
-
-.mt40{
-
-margin-top:40px;
 
 }
 
@@ -2793,107 +3141,180 @@ margin-bottom:30px;
 
 }
 
-.p10{
+/* ==========================================
+   STATUS COLORS
+========================================== */
 
-padding:10px;
+.success{
 
-}
-
-.p20{
-
-padding:20px;
+color:#22C55E;
 
 }
 
-.p30{
+.warning{
 
-padding:30px;
-
-}
-
-/* ==============================
-   BORDER RADIUS
-================================ */
-
-.radius10{
-
-border-radius:10px;
+color:#F59E0B;
 
 }
 
-.radius15{
+.danger{
 
-border-radius:15px;
-
-}
-
-.radius20{
-
-border-radius:20px;
+color:#EF4444;
 
 }
 
-.radius25{
+.info{
 
-border-radius:25px;
-
-}
-
-.radius30{
-
-border-radius:30px;
+color:#3B82F6;
 
 }
 
-/* ==============================
-   SHADOWS
-================================ */
+/* ==========================================
+   GLASS BORDER
+========================================== */
 
-.shadowSmall{
+.glass{
 
-box-shadow:
+background:rgba(255,255,255,.08);
 
-0 5px 15px rgba(0,0,0,.18);
+backdrop-filter:blur(18px);
 
-}
+border:1px solid rgba(255,255,255,.15);
 
-.shadowMedium{
+border-radius:22px;
 
-box-shadow:
-
-0 10px 25px rgba(0,0,0,.25);
+box-shadow:var(--shadow);
 
 }
 
-.shadowLarge{
+/* ==========================================
+   CARD ANIMATION
+========================================== */
 
-box-shadow:
+.cardAnimation{
 
-0 20px 45px rgba(0,0,0,.30);
-
-}
-
-/* ==============================
-   GLASS EFFECT
-================================ */
-
-.glassEffect{
-
-background:
-
-rgba(255,255,255,.12);
-
-backdrop-filter:blur(20px);
-
-border:
-
-1px solid rgba(255,255,255,.18);
+animation:fadeUp .5s ease;
 
 }
 
-/* ==============================
+/* ==========================================
+   BUTTON DISABLED
+========================================== */
+
+button:disabled{
+
+opacity:.55;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+/* ==========================================
+   INPUT DISABLED
+========================================== */
+
+input:disabled,
+textarea:disabled{
+
+opacity:.65;
+
+cursor:not-allowed;
+
+}
+
+/* ==========================================
+   LOADING STATE
+========================================== */
+
+.loading{
+
+pointer-events:none;
+
+opacity:.7;
+
+}
+
+/* ==========================================
+   HIDDEN
+========================================== */
+
+.hidden{
+
+display:none !important;
+
+}
+
+/* ==========================================
+   FADE IN
+========================================== */
+
+.fadeIn{
+
+animation:fadeUp .4s ease;
+
+}
+
+/* ==========================================
    PERFORMANCE
-================================ */
+========================================== */
+
+.menuCard,
+.dailyQuote,
+.settingItem,
+.timelineCard,
+button{
+
+will-change:transform;
+
+}
+
+/* ==========================================
+   SELECTION COLOR
+========================================== */
+
+::selection{
+
+background:#EC4899;
+
+color:#ffffff;
+
+}
+
+/* =========================================================
+   END OF PART 14
+========================================================= */
+/* =========================================================
+   PART 15
+   FINAL PRODUCTION CLEANUP
+========================================================= */
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+button,
+input,
+textarea{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+
+outline:2px solid #EC4899;
+
+outline-offset:3px;
+
+}
+
+/* ==========================================
+   IMAGE OPTIMIZATION
+========================================== */
 
 img{
 
@@ -2901,74 +3322,42 @@ user-select:none;
 
 -webkit-user-drag:none;
 
-}
-
-button{
-
--webkit-tap-highlight-color:transparent;
+pointer-events:none;
 
 }
 
-input,
-textarea{
+/* ==========================================
+   ICONS
+========================================== */
 
-caret-color:#ffd54f;
-
-}
-
-*{
-
--webkit-font-smoothing:antialiased;
-
--moz-osx-font-smoothing:grayscale;
-
-}
-/* ======================================================
-   STYLE.CSS
-   PART 15 (FINAL)
-====================================================== */
-
-/* ==============================
-   GLOBAL FOCUS
-================================ */
-
-button:focus,
-input:focus,
-textarea:focus{
-
-outline:none;
-
-}
-
-/* ==============================
-   IMAGE QUALITY
-================================ */
-
-img{
-
-object-fit:cover;
-
-image-rendering:auto;
-
-}
-
-/* ==============================
-   DISABLE TEXT SELECT
-================================ */
-
-.mainLogo,
-.welcomeIcon,
-.profileImage,
-.menuCard i,
-#sosButton{
+i{
 
 user-select:none;
 
 }
 
-/* ==============================
-   SAFE AREA (NOTCH PHONES)
-================================ */
+/* ==========================================
+   TEXT WRAP
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span{
+
+word-wrap:break-word;
+
+overflow-wrap:break-word;
+
+}
+
+/* ==========================================
+   SAFE AREA SUPPORT
+========================================== */
 
 body{
 
@@ -2976,9 +3365,9 @@ padding-bottom:env(safe-area-inset-bottom);
 
 }
 
-/* ==============================
-   REDUCE ANIMATION
-================================ */
+/* ==========================================
+   REDUCED MOTION SUPPORT
+========================================== */
 
 @media (prefers-reduced-motion:reduce){
 
@@ -2994,28 +3383,20 @@ scroll-behavior:auto !important;
 
 }
 
-/* ==============================
-   LARGE DISPLAYS
-================================ */
-
-@media(min-width:1200px){
-
-.homeWrapper,
-.registerWrapper,
-.otpWrapper,
-.welcomeWrapper{
-
-max-width:500px;
-
-}
-
-}
-
-/* ==============================
+/* ==========================================
    PRINT
-================================ */
+========================================== */
 
 @media print{
+
+#bottomNavigation,
+#popupScreen,
+#pageLoader,
+#activeSOSPanel{
+
+display:none !important;
+
+}
 
 body{
 
@@ -3025,38 +3406,55 @@ color:#000000;
 
 }
 
-#bottomNavigation,
-#pageLoader,
-#particlesBackground{
+}
 
-display:none;
+/* ==========================================
+   FINAL FOOTER
+========================================== */
+
+.footerContent{
+
+opacity:.95;
 
 }
 
+.footerContent strong{
+
+color:#F9A8D4;
+
 }
 
-/* ==============================
-   END OF FILE
-================================ */
+/* ==========================================
+   FINAL APP VERSION
+========================================== */
 
-/*
-===========================================
- Safety Bubble
- Premium Women's Safety Platform
+#appFooter::after{
 
- Version : 1.0
- UI      : Premium Glass UI
- Status  : style.css Completed
+content:"Safety Bubble Version 1.0";
 
- Designed for future modules:
- ✔ Firebase
- ✔ Live Location
- ✔ Trusted Contacts
- ✔ SOS
- ✔ Notifications
- ✔ PWA
- ✔ AI Features
+display:block;
 
- End of style.css
-===========================================
-*/
+margin-top:15px;
+
+font-size:13px;
+
+color:#CBD5E1;
+
+letter-spacing:1px;
+
+}
+
+/* ==========================================
+   FINAL SMOOTHNESS
+========================================== */
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+/* ==========================================
+   END OF STYLE.CSS
+========================================================= */
