@@ -1,2250 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-content="#6D28D9">
-
-<meta name="description"
-content="Safety Bubble - Smart Women's Safety Platform">
-
-<title>Safety Bubble</title>
-
-<!-- Google Fonts -->
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<!-- Font Awesome -->
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<!-- CSS -->
-
-<link rel="stylesheet"
-href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6D28D9">
+    <meta name="description" content="Safety Bubble - Smart Women's Safety Platform">
+    <title>Safety Bubble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<!-- =========================================
-     BACKGROUND
-========================================= -->
-
-<div id="particlesBackground"></div>
-
-<!-- =========================================
-     PAGE LOADER
-========================================= -->
-
-<div id="pageLoader" class="hideScreen">
-
-<div class="loaderCircle"></div>
-
-</div>
-
-<!-- =========================================
-     LOADING SCREEN
-========================================= -->
-
-<section id="loadingScreen">
-
-<div class="loadingContainer">
-
-<div class="logoContainer">
-
-<div class="ring ring1"></div>
-
-<div class="ring ring2"></div>
-
-<div class="ring ring3"></div>
-
-<div class="mainLogo">
-
-<i class="fa-solid fa-shield-heart"></i>
-
-</div>
-
-</div>
-
-<h1>Safety Bubble</h1>
-
-<h3>You're Never Alone</h3>
-
-<p>
-
-Protect • Prevent • Respond
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ===== NEXT : WELCOME SCREEN ===== -->
-  <!-- =========================================
-     WELCOME SCREEN
-========================================= -->
-
-<section id="welcomeScreen" class="hideScreen">
-
-<div class="welcomeWrapper">
-
-<div class="welcomeTop">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-shield-heart"></i>
-
-</div>
-
-<h1>
-
-Welcome to
-
-<span>Safety Bubble</span>
-
-</h1>
-
-<h3>
-
-Your Personal Women's Safety Companion
-
-</h3>
-
-</div>
-
-<div class="quoteCard">
-
-<p id="quoteText">
-
-"Your courage is stronger than your fear.
-Your safety is our priority."
-
-</p>
-
-</div>
-
-<div class="welcomeImage">
-
-<img
-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600"
-alt="Women's Safety">
-
-</div>
-
-<button id="startButton">
-
-<i class="fa-solid fa-arrow-right"></i>
-
-&nbsp;
-
-Get Started
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ===== NEXT : REGISTRATION SCREEN ===== -->
-  <!-- =========================================
-     REGISTRATION SCREEN
-========================================= -->
-
-<section id="registrationScreen" class="hideScreen">
-
-<div class="registerWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-user-shield"></i>
-
-</div>
-
-<h1>Create Your Account</h1>
-
-<p>
-
-Register once to activate all Safety Bubble features.
-
-</p>
-
-</div>
-
-<form id="registrationForm">
-
-<div class="inputBox">
-
-<i class="fa-solid fa-user"></i>
-
-<input
-type="text"
-id="fullName"
-placeholder="Full Name"
-autocomplete="name">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-phone"></i>
-
-<input
-type="tel"
-id="mobileNumber"
-placeholder="Mobile Number"
-maxlength="10"
-inputmode="numeric"
-autocomplete="tel">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-earth-asia"></i>
-
-<input
-type="text"
-id="country"
-placeholder="Country">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<input
-type="text"
-id="state"
-placeholder="State">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-map"></i>
-
-<input
-type="text"
-id="district"
-placeholder="District">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-building"></i>
-
-<input
-type="text"
-id="mandal"
-placeholder="Mandal / Taluk">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-city"></i>
-
-<input
-type="text"
-id="city"
-placeholder="City / Village">
-
-</div>
-
-<div class="inputBox">
-
-<i class="fa-solid fa-house"></i>
-
-<textarea
-id="address"
-placeholder="Full House Address"></textarea>
-
-</div>
-
-<button
-type="button"
-id="continueButton">
-
-Continue
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- ===== NEXT : OTP SCREEN ===== -->
-  <!-- =========================================
-     OTP SCREEN
-========================================= -->
-
-<section id="otpScreen" class="hideScreen">
-
-<div class="otpWrapper">
-
-<div class="otpHeader">
-
-<div class="otpIcon">
-
-<i class="fa-solid fa-mobile-screen-button"></i>
-
-</div>
-
-<h1>Verify Mobile Number</h1>
-
-<p>
-
-Enter the 6-digit verification code sent to your mobile number.
-
-</p>
-
-</div>
-
-<div class="otpCard">
-
-<div class="otpInputBox">
-
-<input
-type="text"
-id="otp1"
-maxlength="1"
-inputmode="numeric"
-autocomplete="one-time-code">
-
-<input
-type="text"
-id="otp2"
-maxlength="1"
-inputmode="numeric">
-
-<input
-type="text"
-id="otp3"
-maxlength="1"
-inputmode="numeric">
-
-<input
-type="text"
-id="otp4"
-maxlength="1"
-inputmode="numeric">
-
-<input
-type="text"
-id="otp5"
-maxlength="1"
-inputmode="numeric">
-
-<input
-type="text"
-id="otp6"
-maxlength="1"
-inputmode="numeric">
-
-</div>
-
-<p class="otpInfo">
-
-Didn't receive the OTP?
-
-<span id="resendOtp">
-
-Resend OTP
-
-</span>
-
-</p>
-
-<button
-type="button"
-id="verifyOtpButton">
-
-<i class="fa-solid fa-circle-check"></i>
-
-&nbsp;
-
-Verify & Continue
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT : HOME DASHBOARD
-========================================= -->
-  <!-- =========================================
-     HOME DASHBOARD
-========================================= -->
-
-<section id="homeScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<!-- ==========================
-     HEADER
-=========================== -->
-
-<div class="homeHeader">
-
-<div class="profileArea">
-
-<div class="profileImage">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-<div>
-
-<h2 id="userName">
-
-Welcome
-
-</h2>
-
-<p>
-
-Stay Safe • Stay Strong
-
-</p>
-
-</div>
-
-</div>
-
-<button
-id="notificationButton">
-
-<i class="fa-solid fa-bell"></i>
-
-</button>
-
-</div>
-
-<!-- ==========================
-     SAFETY STATUS
-=========================== -->
-
-<div class="dailyQuote" id="safetyStatusCard">
-
-<h3>
-
-🟢 Safety Status
-
-</h3>
-
-<p>
-
-📍 Location :
-<span id="currentLocation">
-
-Detecting...
-
-</span>
-
-</p>
-
-<p>
-
-📡 GPS :
-
-<span id="gpsStatus">
-
-Checking...
-
-</span>
-
-</p>
-
-<p>
-
-🔋 Battery :
-
-<span id="batteryStatus">
-
-Loading...
-
-</span>
-
-</p>
-
-<p>
-
-👥 Trusted Contacts :
-
-<span id="trustedContactsCount">
-
-0
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     SAFETY SCORE
-=========================== -->
-
-<div class="dailyQuote"
-id="safetyScoreCard">
-
-<h3>
-
-🛡 Safety Score
-
-</h3>
-
-<p>
-
-<span id="safetyScore">
-
-0
-
-</span>
-
-/100
-
-</p>
-
-</div>
-
-<!-- ==========================
-     NEARBY SAFE PLACES
-=========================== -->
-
-<div class="dailyQuote"
-id="nearbySafePlacesCard">
-
-<h3>
-
-📍 Nearby Safe Places
-
-</h3>
-
-<div id="safePlacesList">
-
-<p>Loading nearby places...</p>
-
-</div>
-
-<button
-type="button"
-id="viewMapButton">
-
-<i class="fa-solid fa-map-location-dot"></i>
-
-View Map
-
-</button>
-
-</div>
-
-<!-- ==========================
-     LIVE MAP
-=========================== -->
-
-<div
-id="liveMapContainer">
-
-</div>
-
-<!-- ==========================
-     DAILY QUOTE
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-💜 Daily Motivation
-
-</h3>
-
-<p id="dailyQuote">
-
-Stay Strong.
-
-</p>
-
-</div>
-
-<!-- ===== NEXT : FEATURE CARDS ===== -->
-  <!-- ==========================
-     FEATURE CARDS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard" id="liveLocationCard">
-
-<i class="fa-solid fa-location-crosshairs"></i>
-
-<h3>Live Location</h3>
-
-</div>
-
-<div class="menuCard" id="trustedContactsCard">
-
-<i class="fa-solid fa-user-group"></i>
-
-<h3>Trusted Contacts</h3>
-
-</div>
-
-<div class="menuCard" id="safeJourneyCard">
-
-<i class="fa-solid fa-route"></i>
-
-<h3>Safe Journey</h3>
-
-</div>
-
-<div class="menuCard" id="emergencyNumbersCard">
-
-<i class="fa-solid fa-phone-volume"></i>
-
-<h3>Emergency Numbers</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerCard">
-
-<i class="fa-solid fa-hand-holding-heart"></i>
-
-<h3>Volunteer</h3>
-
-</div>
-
-<div class="menuCard" id="timelineCard">
-
-<i class="fa-solid fa-timeline"></i>
-
-<h3>Timeline</h3>
-
-</div>
-
-<div class="menuCard" id="deviceCard">
-
-<i class="fa-solid fa-microchip"></i>
-
-<h3>Safety Device</h3>
-
-</div>
-
-<div class="menuCard" id="settingsCard">
-
-<i class="fa-solid fa-gear"></i>
-
-<h3>Settings</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     DEVICE STATUS
-=========================== -->
-
-<div class="dailyQuote" id="deviceStatusCard">
-
-<h3>
-
-📟 Device Status
-
-</h3>
-
-<p>
-
-Connection :
-
-<span id="deviceConnectionStatus">
-
-Not Connected
-
-</span>
-
-</p>
-
-<p>
-
-Battery :
-
-<span id="deviceBatteryStatus">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-Signal :
-
-<span id="deviceSignalStatus">
-
---
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     SOS BUTTON
-=========================== -->
-
-<div class="sosContainer">
-
-<button id="sosButton">
-
-SOS
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===== NEXT : BOTTOM NAVIGATION ===== -->
-  <!-- =========================================
-     BOTTOM NAVIGATION
-========================================= -->
-
-<nav id="bottomNavigation">
-
-<div class="bottomNavContainer">
-
-<button
-class="navButton active"
-id="navHome">
-
-<i class="fa-solid fa-house"></i>
-
-<span>Home</span>
-
-</button>
-
-<button
-class="navButton"
-id="navLocation">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<span>Location</span>
-
-</button>
-
-<button
-class="navButton centerButton"
-id="navSOS">
-
-<i class="fa-solid fa-shield-heart"></i>
-
-</button>
-
-<button
-class="navButton"
-id="navContacts">
-
-<i class="fa-solid fa-user-group"></i>
-
-<span>Contacts</span>
-
-</button>
-
-<button
-class="navButton"
-id="navProfile">
-
-<i class="fa-solid fa-user"></i>
-
-<span>Profile</span>
-
-</button>
-
-</div>
-
-</nav>
-
-<!-- =========================================
-     PREMIUM POPUP
-========================================= -->
-
-<div
-id="popupScreen"
-class="hideScreen">
-
-<div class="popupContainer">
-
-<div class="popupIcon">
-
-<i class="fa-solid fa-circle-info"></i>
-
-</div>
-
-<h2 id="popupTitle">
-
-Information
-
-</h2>
-
-<p id="popupMessage">
-
-Message
-
-</p>
-
-<button
-type="button"
-id="popupButton">
-
-OK
-
-</button>
-
-</div>
-
-</div>
-
-<!-- =========================================
-     NEXT :
-     PROFILE SCREEN
-========================================= -->
-  <!-- =========================================
-     PROFILE SCREEN
-========================================= -->
-
-<section id="profileScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-<h1>
-
-My Profile
-
-</h1>
-
-<p>
-
-Manage your Safety Bubble account.
-
-</p>
-
-</div>
-
-<div class="dailyQuote">
-
-<h3>
-
-👤 Personal Information
-
-</h3>
-
-<p>
-
-<b>Name :</b>
-
-<span id="profileName">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>Mobile :</b>
-
-<span id="profileMobile">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>Country :</b>
-
-<span id="profileCountry">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>State :</b>
-
-<span id="profileState">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>District :</b>
-
-<span id="profileDistrict">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>Mandal :</b>
-
-<span id="profileMandal">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>City :</b>
-
-<span id="profileCity">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-<b>Address :</b>
-
-<span id="profileAddress">
-
---
-
-</span>
-
-</p>
-
-</div>
-
-<div class="menuGrid">
-
-<div class="menuCard" id="editProfileCard">
-
-<i class="fa-solid fa-user-pen"></i>
-
-<h3>Edit Profile</h3>
-
-</div>
-
-<div class="menuCard" id="privacyCard">
-
-<i class="fa-solid fa-user-shield"></i>
-
-<h3>Privacy</h3>
-
-</div>
-
-<div class="menuCard" id="accountSecurityCard">
-
-<i class="fa-solid fa-lock"></i>
-
-<h3>Security</h3>
-
-</div>
-
-<div class="menuCard" id="logoutCard">
-
-<i class="fa-solid fa-right-from-bracket"></i>
-
-<h3>Logout</h3>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===== NEXT : TRUSTED CONTACTS SCREEN ===== -->
-  <!-- =========================================
-     TRUSTED CONTACTS SCREEN
-========================================= -->
-
-<section id="trustedContactsScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-user-group"></i>
-
-</div>
-
-<h1>
-
-Trusted Contacts
-
-</h1>
-
-<p>
-
-Add family members and trusted people for emergency alerts.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     CONTACT LIST
-=========================== -->
-
-<div id="trustedContactsList">
-
-<div class="dailyQuote">
-
-<h3>
-
-No Trusted Contacts Added
-
-</h3>
-
-<p>
-
-Click the button below to add your first trusted contact.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     ACTION BUTTONS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard" id="addTrustedContactCard">
-
-<i class="fa-solid fa-user-plus"></i>
-
-<h3>
-
-Add Contact
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="primaryContactCard">
-
-<i class="fa-solid fa-star"></i>
-
-<h3>
-
-Primary Contact
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="callTrustedContactCard">
-
-<i class="fa-solid fa-phone"></i>
-
-<h3>
-
-Call Contact
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="whatsappTrustedContactCard">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-<h3>
-
-WhatsApp
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="smsTrustedContactCard">
-
-<i class="fa-solid fa-comment-sms"></i>
-
-<h3>
-
-SMS Alert
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="removeTrustedContactCard">
-
-<i class="fa-solid fa-trash"></i>
-
-<h3>
-
-Remove Contact
-
-</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     QUICK INFO
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Safety Information
-
-</h3>
-
-<p>
-
-When SOS is activated, your trusted contacts will immediately receive your live location and emergency alert.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     VOLUNTEER SCREEN
-========================================= -->
-  <!-- =========================================
-     VOLUNTEER SCREEN
-========================================= -->
-
-<section id="volunteerScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-hand-holding-heart"></i>
-
-</div>
-
-<h1>
-
-Safety Volunteers
-
-</h1>
-
-<p>
-
-Become a verified volunteer and help people during emergencies.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     VOLUNTEER STATUS
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Volunteer Status
-
-</h3>
-
-<p>
-
-Status :
-
-<span id="volunteerStatus">
-
-Not Registered
-
-</span>
-
-</p>
-
-<p>
-
-Availability :
-
-<span id="volunteerAvailability">
-
-Offline
-
-</span>
-
-</p>
-
-<p>
-
-Completed Helps :
-
-<span id="volunteerHelpCount">
-
-0
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     ACTION CARDS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard" id="registerVolunteerCard">
-
-<i class="fa-solid fa-user-plus"></i>
-
-<h3>
-
-Register
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerRequestsCard">
-
-<i class="fa-solid fa-bell"></i>
-
-<h3>
-
-Emergency Requests
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerHistoryCard">
-
-<i class="fa-solid fa-clock-rotate-left"></i>
-
-<h3>
-
-Help History
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerAvailabilityCard">
-
-<i class="fa-solid fa-toggle-on"></i>
-
-<h3>
-
-Availability
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerGuidelinesCard">
-
-<i class="fa-solid fa-book"></i>
-
-<h3>
-
-Guidelines
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="volunteerSupportCard">
-
-<i class="fa-solid fa-headset"></i>
-
-<h3>
-
-Support
-
-</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     INFORMATION
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Volunteer Information
-
-</h3>
-
-<p>
-
-Verified volunteers receive nearby emergency requests and can safely assist people in need while respecting user privacy.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     TIMELINE SCREEN
-========================================= -->
-  <!-- =========================================
-     TIMELINE SCREEN
-========================================= -->
-
-<section id="timelineScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-timeline"></i>
-
-</div>
-
-<h1>
-
-Safety Timeline
-
-</h1>
-
-<p>
-
-View your safety activities and emergency history.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     TIMELINE SUMMARY
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Timeline Summary
-
-</h3>
-
-<p>
-
-Today's Events :
-
-<span id="todayEventsCount">
-
-0
-
-</span>
-
-</p>
-
-<p>
-
-Safe Journeys :
-
-<span id="journeyCount">
-
-0
-
-</span>
-
-</p>
-
-<p>
-
-SOS Alerts :
-
-<span id="sosHistoryCount">
-
-0
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     TIMELINE LIST
-=========================== -->
-
-<div
-id="timelineList">
-
-<div class="dailyQuote">
-
-<h3>
-
-No Timeline Available
-
-</h3>
-
-<p>
-
-Your activities will appear here automatically.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     TIMELINE ACTIONS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard"
-id="todayTimelineCard">
-
-<i class="fa-solid fa-calendar-day"></i>
-
-<h3>
-
-Today
-
-</h3>
-
-</div>
-
-<div class="menuCard"
-id="journeyHistoryCard">
-
-<i class="fa-solid fa-route"></i>
-
-<h3>
-
-Journeys
-
-</h3>
-
-</div>
-
-<div class="menuCard"
-id="locationHistoryCard">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<h3>
-
-Location History
-
-</h3>
-
-</div>
-
-<div class="menuCard"
-id="sosHistoryCard">
-
-<i class="fa-solid fa-triangle-exclamation"></i>
-
-<h3>
-
-SOS History
-
-</h3>
-
-</div>
-
-<div class="menuCard"
-id="mapTimelineCard">
-
-<i class="fa-solid fa-map-location-dot"></i>
-
-<h3>
-
-Route Map
-
-</h3>
-
-</div>
-
-<div class="menuCard"
-id="exportTimelineCard">
-
-<i class="fa-solid fa-file-export"></i>
-
-<h3>
-
-Export
-
-</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     MAP ROUTE PREVIEW
-=========================== -->
-
-<div
-id="timelineMapPreview">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     DEVICE SCREEN
-========================================= -->
-  <!-- =========================================
-     DEVICE SCREEN
-========================================= -->
-
-<section id="deviceScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-microchip"></i>
-
-</div>
-
-<h1>
-
-Safety Device
-
-</h1>
-
-<p>
-
-Connect your Safety Bubble smart device.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     DEVICE STATUS
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Device Information
-
-</h3>
-
-<p>
-
-Connection :
-
-<span id="deviceConnection">
-
-Not Connected
-
-</span>
-
-</p>
-
-<p>
-
-Battery :
-
-<span id="deviceBattery">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-Signal :
-
-<span id="deviceSignal">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-Bluetooth :
-
-<span id="deviceBluetooth">
-
-OFF
-
-</span>
-
-</p>
-
-<p>
-
-Wake Word :
-
-<span id="deviceWakeWord">
-
-Inactive
-
-</span>
-
-</p>
-
-<p>
-
-Emergency Button :
-
-<span id="deviceEmergencyButton">
-
-Ready
-
-</span>
-
-</p>
-
-<p>
-
-Last Sync :
-
-<span id="deviceLastSync">
-
-Never
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     DEVICE ACTIONS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard" id="connectDeviceCard">
-
-<i class="fa-solid fa-bluetooth"></i>
-
-<h3>
-
-Connect Device
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="disconnectDeviceCard">
-
-<i class="fa-solid fa-link-slash"></i>
-
-<h3>
-
-Disconnect
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="syncDeviceCard">
-
-<i class="fa-solid fa-rotate"></i>
-
-<h3>
-
-Sync Device
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="findDeviceCard">
-
-<i class="fa-solid fa-magnifying-glass-location"></i>
-
-<h3>
-
-Find Device
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="deviceLogsCard">
-
-<i class="fa-solid fa-file-lines"></i>
-
-<h3>
-
-Device Logs
-
-</h3>
-
-</div>
-
-<div class="menuCard" id="deviceSettingsCard">
-
-<i class="fa-solid fa-sliders"></i>
-
-<h3>
-
-Device Settings
-
-</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     DEVICE LOGS
-=========================== -->
-
-<div id="deviceLogsContainer">
-
-<div class="dailyQuote">
-
-<h3>
-
-Recent Device Activity
-
-</h3>
-
-<p>
-
-No device activity available.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     SETTINGS SCREEN
-========================================= -->
-  <!-- =========================================
-     SETTINGS SCREEN
-========================================= -->
-
-<section id="settingsScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-gear"></i>
-
-</div>
-
-<h1>
-
-Settings
-
-</h1>
-
-<p>
-
-Customize your Safety Bubble experience.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     SETTINGS LIST
-=========================== -->
-
-<div class="settingsContainer">
-
-<div class="settingItem" id="languageSetting">
-
-<div>
-
-<h3>🌐 Language</h3>
-
-<p>Select your preferred language</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="themeSetting">
-
-<div>
-
-<h3>🌙 Dark Mode</h3>
-
-<p>Switch between Light & Dark mode</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="notificationSetting">
-
-<div>
-
-<h3>🔔 Notifications</h3>
-
-<p>Manage emergency notifications</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="locationPermissionSetting">
-
-<div>
-
-<h3>📍 Location Permission</h3>
-
-<p>Manage GPS & Location access</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="privacySetting">
-
-<div>
-
-<h3>🔒 Privacy</h3>
-
-<p>Control your personal data</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="securitySetting">
-
-<div>
-
-<h3>🛡 Security</h3>
-
-<p>Account & emergency security</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="aboutSetting">
-
-<div>
-
-<h3>ℹ About Safety Bubble</h3>
-
-<p>Application information</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-<div class="settingItem" id="termsSetting">
-
-<div>
-
-<h3>📄 Terms & Privacy Policy</h3>
-
-<p>Read our terms and privacy policy</p>
-
-</div>
-
-<i class="fa-solid fa-angle-right"></i>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     APP VERSION
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-Application Version
-
-</h3>
-
-<p>
-
-Safety Bubble v1.0
-
-</p>
-
-<p>
-
-Designed for Women's Safety
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     FINAL HTML (Part 14)
-========================================= -->
-  <!-- =========================================
-     LIVE MAP SCREEN
-========================================= -->
-
-<section id="mapScreen" class="hideScreen">
-
-<div class="homeWrapper">
-
-<div class="registerHeader">
-
-<div class="welcomeIcon">
-
-<i class="fa-solid fa-map-location-dot"></i>
-
-</div>
-
-<h1>
-
-Live Safety Map
-
-</h1>
-
-<p>
-
-View your live location and nearby emergency services.
-
-</p>
-
-</div>
-
-<!-- ==========================
-     MAP FILTERS
-=========================== -->
-
-<div class="menuGrid">
-
-<div class="menuCard" id="showPoliceStationsCard">
-
-<i class="fa-solid fa-building-shield"></i>
-
-<h3>Police</h3>
-
-</div>
-
-<div class="menuCard" id="showHospitalsCard">
-
-<i class="fa-solid fa-hospital"></i>
-
-<h3>Hospitals</h3>
-
-</div>
-
-<div class="menuCard" id="showPharmaciesCard">
-
-<i class="fa-solid fa-capsules"></i>
-
-<h3>Pharmacy</h3>
-
-</div>
-
-<div class="menuCard" id="showSafePlacesCard">
-
-<i class="fa-solid fa-shield-heart"></i>
-
-<h3>Safe Places</h3>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     LIVE MAP
-=========================== -->
-
-<div id="fullLiveMapContainer"></div>
-
-<!-- ==========================
-     NEARBY VOLUNTEERS
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-🦸 Nearby Volunteers
-
-</h3>
-
-<div id="nearbyVolunteerList">
-
-<p>
-
-No nearby volunteers available.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ==========================
-     EMERGENCY STATUS
-=========================== -->
-
-<div class="dailyQuote">
-
-<h3>
-
-🚨 Emergency Response
-
-</h3>
-
-<p>
-
-Status :
-
-<span id="emergencyResponseStatus">
-
-Standby
-
-</span>
-
-</p>
-
-<p>
-
-Accepted Volunteer :
-
-<span id="acceptedVolunteerName">
-
---
-
-</span>
-
-</p>
-
-<p>
-
-Estimated Arrival :
-
-<span id="volunteerETA">
-
---
-
-</span>
-
-</p>
-
-</div>
-
-<!-- ==========================
-     ACTIVE SOS PANEL
-=========================== -->
-
-<div id="activeSOSPanel" class="hideScreen">
-
-<h2>
-
-🚨 SOS ACTIVE
-
-</h2>
-
-<p>
-
-Emergency alerts have been sent to your trusted contacts and nearby volunteers.
-
-</p>
-
-<button
-type="button"
-id="cancelSOSButton">
-
-Cancel SOS
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================================
-     NEXT :
-     FINAL HTML (Part 15)
-========================================= -->
-  <!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer id="appFooter">
-
-<div class="footerContent">
-
-<h3>
-
-Safety Bubble
-
-</h3>
-
-<p>
-
-Protect • Prevent • Respond
-
-</p>
-
-<p class="developerCredit">
-
-An Innovative Project by
-
-<strong>
-
-Venkat Rao Tirupati
-
-</strong>
-
-</p>
-
-<p>
-
-© 2026 Safety Bubble.
-
-All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics-compat.js"></script>
-<script src="script.js"></script>
-
+    <div id="particlesBackground"></div>
+    <div id="pageLoader" class="hideScreen"><div class="loaderCircle"></div></div>
+
+    <section id="loadingScreen">
+        <div class="loadingContainer">
+            <div class="logoContainer">
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+                <div class="ring ring3"></div>
+                <div class="mainLogo"><i class="fa-solid fa-shield-heart"></i></div>
+            </div>
+            <h1>Safety Bubble</h1>
+            <h3>You're Never Alone</h3>
+            <p>Protect • Prevent • Respond</p>
+        </div>
+    </section>
+
+    <section id="welcomeScreen" class="hideScreen">
+        <div class="welcomeWrapper">
+            <div class="welcomeTop">
+                <div class="welcomeIcon"><i class="fa-solid fa-shield-heart"></i></div>
+                <h1>Welcome to <span>Safety Bubble</span></h1>
+                <h3>Your Personal Women's Safety Companion</h3>
+            </div>
+            <div class="quoteCard">
+                <p id="quoteText">"Your courage is stronger than your fear. Your safety is our priority."</p>
+            </div>
+            <div class="welcomeImage">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="Women's Safety">
+            </div>
+            <button id="startButton"><i class="fa-solid fa-arrow-right"></i> &nbsp; Get Started</button>
+        </div>
+    </section>
+
+    <section id="registrationScreen" class="hideScreen">
+        <div class="registerWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-user-shield"></i></div>
+                <h1>Create Your Account</h1>
+                <p>Register once to activate all Safety Bubble features.</p>
+            </div>
+            <form id="registrationForm" onsubmit="event.preventDefault();">
+                <div class="inputBox"><i class="fa-solid fa-user"></i><input type="text" id="fullName" placeholder="Full Name" autocomplete="name"></div>
+                <div class="inputBox"><i class="fa-solid fa-phone"></i><input type="tel" id="mobileNumber" placeholder="Mobile Number" maxlength="10" inputmode="numeric" autocomplete="tel"></div>
+                <div class="inputBox"><i class="fa-solid fa-earth-asia"></i><input type="text" id="country" placeholder="Country"></div>
+                <div class="inputBox"><i class="fa-solid fa-location-dot"></i><input type="text" id="state" placeholder="State"></div>
+                <div class="inputBox"><i class="fa-solid fa-map"></i><input type="text" id="district" placeholder="District"></div>
+                <div class="inputBox"><i class="fa-solid fa-building"></i><input type="text" id="mandal" placeholder="Mandal / Taluk"></div>
+                <div class="inputBox"><i class="fa-solid fa-city"></i><input type="text" id="city" placeholder="City / Village"></div>
+                <div class="inputBox"><i class="fa-solid fa-house"></i><textarea id="address" placeholder="Full House Address"></textarea></div>
+                <button type="button" id="continueButton">Continue <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <section id="otpScreen" class="hideScreen">
+        <div class="otpWrapper">
+            <div class="otpHeader">
+                <div class="otpIcon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <h1>Verify Mobile Number</h1>
+                <p>Enter the 6-digit verification code sent to your mobile number.</p>
+            </div>
+            <div class="otpCard">
+                <div class="otpInputBox">
+                    <input type="text" id="otp1" maxlength="1" inputmode="numeric" autocomplete="one-time-code">
+                    <input type="text" id="otp2" maxlength="1" inputmode="numeric">
+                    <input type="text" id="otp3" maxlength="1" inputmode="numeric">
+                    <input type="text" id="otp4" maxlength="1" inputmode="numeric">
+                    <input type="text" id="otp5" maxlength="1" inputmode="numeric">
+                    <input type="text" id="otp6" maxlength="1" inputmode="numeric">
+                </div>
+                <p class="otpInfo">Didn't receive the OTP? <span id="resendOtp">Resend OTP</span></p>
+                <button type="button" id="verifyOtpButton"><i class="fa-solid fa-circle-check"></i> &nbsp; Verify & Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="homeScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="homeHeader">
+                <div class="profileArea">
+                    <div class="profileImage"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                        <h2 id="userName">Welcome</h2>
+                        <p>Stay Safe • Stay Strong</p>
+                    </div>
+                </div>
+                <button id="notificationButton"><i class="fa-solid fa-bell"></i></button>
+            </div>
+
+            <div class="dailyQuote" id="safetyStatusCard">
+                <h3>🟢 Safety Status</h3>
+                <p>📍 Location : <span id="currentLocation">Detecting...</span></p>
+                <p>📡 GPS : <span id="gpsStatus">Checking...</span></p>
+                <p>🔋 Battery : <span id="batteryStatus">Loading...</span></p>
+                <p>👥 Trusted Contacts : <span id="trustedContactsCount">0</span></p>
+            </div>
+
+            <div class="dailyQuote" id="safetyScoreCard">
+                <h3>🛡 Safety Score</h3>
+                <p><span id="safetyScore">0</span>/100</p>
+            </div>
+
+            <div class="dailyQuote" id="nearbySafePlacesCard">
+                <h3>📍 Nearby Safe Places</h3>
+                <div id="safePlacesList"><p>Loading nearby places...</p></div>
+                <button type="button" id="viewMapButton"><i class="fa-solid fa-map-location-dot"></i> View Map</button>
+            </div>
+
+            <div id="liveMapContainer"></div>
+
+            <div class="dailyQuote">
+                <h3>💜 Daily Motivation</h3>
+                <p id="dailyQuote">Stay Strong.</p>
+            </div>
+
+            <div class="menuGrid">
+                <div class="menuCard" id="liveLocationCard"><i class="fa-solid fa-location-crosshairs"></i><h3>Live Location</h3></div>
+                <div class="menuCard" id="trustedContactsCard"><i class="fa-solid fa-user-group"></i><h3>Trusted Contacts</h3></div>
+                <div class="menuCard" id="safeJourneyCard"><i class="fa-solid fa-route"></i><h3>Safe Journey</h3></div>
+                <div class="menuCard" id="emergencyNumbersCard"><i class="fa-solid fa-phone-volume"></i><h3>Emergency Numbers</h3></div>
+                <div class="menuCard" id="volunteerCard"><i class="fa-solid fa-hand-holding-heart"></i><h3>Volunteer</h3></div>
+                <div class="menuCard" id="timelineCard"><i class="fa-solid fa-timeline"></i><h3>Timeline</h3></div>
+                <div class="menuCard" id="deviceCard"><i class="fa-solid fa-microchip"></i><h3>Safety Device</h3></div>
+                <div class="menuCard" id="settingsCard"><i class="fa-solid fa-gear"></i><h3>Settings</h3></div>
+            </div>
+
+            <div class="dailyQuote" id="deviceStatusCard">
+                <h3>📟 Device Status</h3>
+                <p>Connection : <span id="deviceConnectionStatus">Not Connected</span></p>
+                <p>Battery : <span id="deviceBatteryStatus">--</span></p>
+                <p>Signal : <span id="deviceSignalStatus">--</span></p>
+            </div>
+
+            <div class="sosContainer">
+                <button id="sosButton">SOS</button>
+            </div>
+        </div>
+    </section>
+
+    <nav id="bottomNavigation">
+        <div class="bottomNavContainer">
+            <button class="navButton active" id="navHome"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="navButton" id="navLocation"><i class="fa-solid fa-location-dot"></i><span>Location</span></button>
+            <button class="navButton centerButton" id="navSOS"><i class="fa-solid fa-shield-heart"></i></button>
+            <button class="navButton" id="navContacts"><i class="fa-solid fa-user-group"></i><span>Contacts</span></button>
+            <button class="navButton" id="navProfile"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+        </div>
+    </nav>
+
+    <div id="popupScreen" class="hideScreen">
+        <div class="popupContainer">
+            <div class="popupIcon"><i class="fa-solid fa-circle-info"></i></div>
+            <h2 id="popupTitle">Information</h2>
+            <p id="popupMessage">Message</p>
+            <button type="button" id="popupButton">OK</button>
+        </div>
+    </div>
+
+    <section id="profileScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-user"></i></div>
+                <h1>My Profile</h1>
+                <p>Manage your Safety Bubble account.</p>
+            </div>
+            <div class="dailyQuote">
+                <h3>👤 Personal Information</h3>
+                <p><b>Name :</b> <span id="profileName">--</span></p>
+                <p><b>Mobile :</b> <span id="profileMobile">--</span></p>
+                <p><b>Country :</b> <span id="profileCountry">--</span></p>
+                <p><b>State :</b> <span id="profileState">--</span></p>
+                <p><b>District :</b> <span id="profileDistrict">--</span></p>
+                <p><b>Mandal :</b> <span id="profileMandal">--</span></p>
+                <p><b>City :</b> <span id="profileCity">--</span></p>
+                <p><b>Address :</b> <span id="profileAddress">--</span></p>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="editProfileCard"><i class="fa-solid fa-user-pen"></i><h3>Edit Profile</h3></div>
+                <div class="menuCard" id="privacyCard"><i class="fa-solid fa-user-shield"></i><h3>Privacy</h3></div>
+                <div class="menuCard" id="accountSecurityCard"><i class="fa-solid fa-lock"></i><h3>Security</h3></div>
+                <div class="menuCard" id="logoutCard"><i class="fa-solid fa-right-from-bracket"></i><h3>Logout</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trustedContactsScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-user-group"></i></div>
+                <h1>Trusted Contacts</h1>
+                <p>Add family members and trusted people for emergency alerts.</p>
+            </div>
+            <div id="trustedContactsList">
+                <div class="dailyQuote">
+                    <h3>No Trusted Contacts Added</h3>
+                    <p>Click the button below to add your first trusted contact.</p>
+                </div>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="addTrustedContactCard"><i class="fa-solid fa-user-plus"></i><h3>Add Contact</h3></div>
+                <div class="menuCard" id="primaryContactCard"><i class="fa-solid fa-star"></i><h3>Primary Contact</h3></div>
+                <div class="menuCard" id="callTrustedContactCard"><i class="fa-solid fa-phone"></i><h3>Call Contact</h3></div>
+                <div class="menuCard" id="whatsappTrustedContactCard"><i class="fa-brands fa-whatsapp"></i><h3>WhatsApp</h3></div>
+                <div class="menuCard" id="smsTrustedContactCard"><i class="fa-solid fa-comment-sms"></i><h3>SMS Alert</h3></div>
+                <div class="menuCard" id="removeTrustedContactCard"><i class="fa-solid fa-trash"></i><h3>Remove Contact</h3></div>
+            </div>
+            <div class="dailyQuote">
+                <h3>Safety Information</h3>
+                <p>When SOS is activated, your trusted contacts will immediately receive your live location and emergency alert.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteerScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h1>Safety Volunteers</h1>
+                <p>Become a verified volunteer and help people during emergencies.</p>
+            </div>
+            <div class="dailyQuote">
+                <h3>Volunteer Status</h3>
+                <p>Status : <span id="volunteerStatus">Not Registered</span></p>
+                <p>Availability : <span id="volunteerAvailability">Offline</span></p>
+                <p>Completed Helps : <span id="volunteerHelpCount">0</span></p>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="registerVolunteerCard"><i class="fa-solid fa-user-plus"></i><h3>Register</h3></div>
+                <div class="menuCard" id="volunteerRequestsCard"><i class="fa-solid fa-bell"></i><h3>Emergency Requests</h3></div>
+                <div class="menuCard" id="volunteerHistoryCard"><i class="fa-solid fa-clock-rotate-left"></i><h3>Help History</h3></div>
+                <div class="menuCard" id="volunteerAvailabilityCard"><i class="fa-solid fa-toggle-on"></i><h3>Availability</h3></div>
+                <div class="menuCard" id="volunteerGuidelinesCard"><i class="fa-solid fa-book"></i><h3>Guidelines</h3></div>
+                <div class="menuCard" id="volunteerSupportCard"><i class="fa-solid fa-headset"></i><h3>Support</h3></div>
+            </div>
+            <div class="dailyQuote">
+                <h3>Volunteer Information</h3>
+                <p>Verified volunteers receive nearby emergency requests and can safely assist people in need while respecting user privacy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="timelineScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-timeline"></i></div>
+                <h1>Safety Timeline</h1>
+                <p>View your safety activities and emergency history.</p>
+            </div>
+            <div class="dailyQuote">
+                <h3>Timeline Summary</h3>
+                <p>Today's Events : <span id="todayEventsCount">0</span></p>
+                <p>Safe Journeys : <span id="journeyCount">0</span></p>
+                <p>SOS Alerts : <span id="sosHistoryCount">0</span></p>
+            </div>
+            <div id="timelineList">
+                <div class="dailyQuote">
+                    <h3>No Timeline Available</h3>
+                    <p>Your activities will appear here automatically.</p>
+                </div>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="todayTimelineCard"><i class="fa-solid fa-calendar-day"></i><h3>Today</h3></div>
+                <div class="menuCard" id="journeyHistoryCard"><i class="fa-solid fa-route"></i><h3>Journeys</h3></div>
+                <div class="menuCard" id="locationHistoryCard"><i class="fa-solid fa-location-dot"></i><h3>Location History</h3></div>
+                <div class="menuCard" id="sosHistoryCard"><i class="fa-solid fa-triangle-exclamation"></i><h3>SOS History</h3></div>
+                <div class="menuCard" id="mapTimelineCard"><i class="fa-solid fa-map-location-dot"></i><h3>Route Map</h3></div>
+                <div class="menuCard" id="exportTimelineCard"><i class="fa-solid fa-file-export"></i><h3>Export</h3></div>
+            </div>
+            <div id="timelineMapPreview"></div>
+        </div>
+    </section>
+
+    <section id="deviceScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-microchip"></i></div>
+                <h1>Safety Device</h1>
+                <p>Connect your Safety Bubble smart device.</p>
+            </div>
+            <div class="dailyQuote">
+                <h3>Device Information</h3>
+                <p>Connection : <span id="deviceConnection">Not Connected</span></p>
+                <p>Battery : <span id="deviceBattery">--</span></p>
+                <p>Signal : <span id="deviceSignal">--</span></p>
+                <p>Bluetooth : <span id="deviceBluetooth">OFF</span></p>
+                <p>Wake Word : <span id="deviceWakeWord">Inactive</span></p>
+                <p>Emergency Button : <span id="deviceEmergencyButton">Ready</span></p>
+                <p>Last Sync : <span id="deviceLastSync">Never</span></p>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="connectDeviceCard"><i class="fa-solid fa-bluetooth"></i><h3>Connect Device</h3></div>
+                <div class="menuCard" id="disconnectDeviceCard"><i class="fa-solid fa-link-slash"></i><h3>Disconnect</h3></div>
+                <div class="menuCard" id="syncDeviceCard"><i class="fa-solid fa-rotate"></i><h3>Sync Device</h3></div>
+                <div class="menuCard" id="findDeviceCard"><i class="fa-solid fa-magnifying-glass-location"></i><h3>Find Device</h3></div>
+                <div class="menuCard" id="deviceLogsCard"><i class="fa-solid fa-file-lines"></i><h3>Device Logs</h3></div>
+                <div class="menuCard" id="deviceSettingsCard"><i class="fa-solid fa-sliders"></i><h3>Device Settings</h3></div>
+            </div>
+            <div id="deviceLogsContainer">
+                <div class="dailyQuote">
+                    <h3>Recent Device Activity</h3>
+                    <p>No device activity available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="settingsScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-gear"></i></div>
+                <h1>Settings</h1>
+                <p>Customize your Safety Bubble experience.</p>
+            </div>
+            <div class="settingsContainer">
+                <div class="settingItem" id="languageSetting"><div><h3>🌐 Language</h3><p>Select your preferred language</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="themeSetting"><div><h3>🌙 Dark Mode</h3><p>Switch between Light & Dark mode</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="notificationSetting"><div><h3>🔔 Notifications</h3><p>Manage emergency notifications</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="locationPermissionSetting"><div><h3>📍 Location Permission</h3><p>Manage GPS & Location access</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="privacySetting"><div><h3>🔒 Privacy</h3><p>Control your personal data</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="securitySetting"><div><h3>🛡 Security</h3><p>Account & emergency security</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="aboutSetting"><div><h3>ℹ About Safety Bubble</h3><p>Application information</p></div><i class="fa-solid fa-angle-right"></i></div>
+                <div class="settingItem" id="termsSetting"><div><h3>📄 Terms & Privacy Policy</h3><p>Read our terms and privacy policy</p></div><i class="fa-solid fa-angle-right"></i></div>
+            </div>
+            <div class="dailyQuote">
+                <h3>Application Version</h3>
+                <p>Safety Bubble v1.0</p>
+                <p>Designed for Women's Safety</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapScreen" class="hideScreen">
+        <div class="homeWrapper">
+            <div class="registerHeader">
+                <div class="welcomeIcon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <h1>Live Safety Map</h1>
+                <p>View your live location and nearby emergency services.</p>
+            </div>
+            <div class="menuGrid">
+                <div class="menuCard" id="showPoliceStationsCard"><i class="fa-solid fa-building-shield"></i><h3>Police</h3></div>
+                <div class="menuCard" id="showHospitalsCard"><i class="fa-solid fa-hospital"></i><h3>Hospitals</h3></div>
+                <div class="menuCard" id="showPharmaciesCard"><i class="fa-solid fa-capsules"></i><h3>Pharmacy</h3></div>
+                <div class="menuCard" id="showSafePlacesCard"><i class="fa-solid fa-shield-heart"></i><h3>Safe Places</h3></div>
+            </div>
+            <div id="fullLiveMapContainer"></div>
+            <div class="dailyQuote">
+                <h3>🦸 Nearby Volunteers</h3>
+                <div id="nearbyVolunteerList"><p>No nearby volunteers available.</p></div>
+            </div>
+            <div class="dailyQuote">
+                <h3>🚨 Emergency Response</h3>
+                <p>Status : <span id="emergencyResponseStatus">Standby</span></p>
+                <p>Accepted Volunteer : <span id="acceptedVolunteerName">--</span></p>
+                <p>Estimated Arrival : <span id="volunteerETA">--</span></p>
+            </div>
+            <div id="activeSOSPanel" class="hideScreen">
+                <h2>🚨 SOS ACTIVE</h2>
+                <p>Emergency alerts have been sent to your trusted contacts and nearby volunteers.</p>
+                <button type="button" id="cancelSOSButton">Cancel SOS</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="appFooter">
+        <div class="footerContent">
+            <h3>Safety Bubble</h3>
+            <p>Protect • Prevent • Respond</p>
+            <p class="developerCredit">An Innovative Project by <strong>Venkat Rao Tirupati</strong></p>
+            <p>© 2026 Safety Bubble. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
