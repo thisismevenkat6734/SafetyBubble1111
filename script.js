@@ -264,21 +264,13 @@ welcomeScreen
 =========================================================*/
 
 const firebaseConfig = {
-
-    apiKey: "YOUR_API_KEY",
-
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-    projectId: "YOUR_PROJECT_ID",
-
-    storageBucket: "YOUR_PROJECT.appspot.com",
-
-    messagingSenderId: "YOUR_SENDER_ID",
-
-    appId: "YOUR_APP_ID",
-
-    measurementId: "YOUR_MEASUREMENT_ID"
-
+  apiKey: "AIzaSyCG6g-oPgCij8DWZJRjWWFePHveAq1oKLE",
+  authDomain: "safety-bubble.firebaseapp.com",
+  projectId: "safety-bubble",
+  storageBucket: "safety-bubble.firebasestorage.app",
+  messagingSenderId: "299468562457",
+  appId: "1:299468562457:web:3e564a9a41d2bb71ed8a88",
+  measurementId: "G-60CE4S5JD3"
 };
 
 /*=========================================================
