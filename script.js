@@ -1268,7 +1268,7 @@ $("viewMapButton").addEventListener(
   HOME START
 =========================================================*/
 
-function initializeDashboard(){
+function initializeDashboardGPS(){
 
     gpsStatus.textContent="Checking...";
 
@@ -1294,7 +1294,7 @@ setInterval(
 
     refreshLocation,
 
-    30000
+    5000
 
 );
 
