@@ -1131,7 +1131,7 @@ function locationSuccess(position){
     APP.latitude = position.coords.latitude;
 
     APP.longitude = position.coords.longitude;
-
+console.log("GPS:", APP.latitude, APP.longitude);
     gpsStatus.textContent = "Connected";
 
     currentLocation.textContent =
