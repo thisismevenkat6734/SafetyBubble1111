@@ -193,31 +193,6 @@ otpScreen
 
 );
 
-verifyOtpButton.addEventListener(
-
-"click",
-
-()=>{
-
-showScreen(
-
-homeScreen
-
-);
-
-showPopup(
-
-"Welcome",
-
-"Registration completed successfully."
-
-);
-
-APP.loggedIn=true;
-
-}
-
-);
 
 /*=========================================================
   SPLASH
@@ -878,21 +853,6 @@ continueButton.addEventListener(
 
 );
 
-verifyOtpButton.removeEventListener(
-
-    "click",
-
-    ()=>{}
-
-);
-
-verifyOtpButton.addEventListener(
-
-    "click",
-
-    verifyOTP
-
-);
 
 /*=========================================================
   END OF PART 4
@@ -1008,24 +968,17 @@ async function loadBatteryStatus(){
 
 function initializeDashboard(){
 
-    gpsStatus.textContent =
-    "Waiting";
-
-    currentLocation.textContent =
-    "Detecting...";
-
-    trustedContactsCount.textContent =
-    "0";
-
-    safetyScore.textContent =
-    "100";
+    gpsStatus.textContent = "Checking...";
+    currentLocation.textContent = "Detecting...";
+    trustedContactsCount.textContent = "0";
+    safetyScore.textContent = "100";
 
     loadUserProfile();
-
     loadBatteryStatus();
+    getCurrentLocation();
+    loadSafePlaces();
 
 }
-
 /*=========================================================
   LOGIN SUCCESS
 =========================================================*/
@@ -1285,7 +1238,6 @@ function initializeDashboardGPS(){
     getCurrentLocation();
 
 }
-
 /*=========================================================
   AUTO REFRESH GPS
 =========================================================*/
@@ -1723,16 +1675,6 @@ $("whatsappTrustedContactCard")
 /*=========================================================
   LOAD AFTER LOGIN
 =========================================================*/
-
-const previousOpenHome=openHome;
-
-openHome=function(){
-
-    previousOpenHome();
-
-    loadTrustedContacts();
-
-};
 
 /*=========================================================
   END OF PART 8
@@ -2187,7 +2129,7 @@ async()=>{
         await auth.signOut();
 
     }catch(e){}
-
+clearSession();
     APP.loggedIn=false;
 
     APP.user=null;
@@ -2502,31 +2444,9 @@ function clearSession(){
   UPDATE LOGIN
 =========================================================*/
 
-const previousOpenHomeFunction = openHome;
-
-openHome = function(){
-
-    previousOpenHomeFunction();
-
-    saveSession();
-
-};
-
 /*=========================================================
   UPDATE LOGOUT
 =========================================================*/
-
-$("logoutCard").addEventListener(
-
-    "click",
-
-    ()=>{
-
-        clearSession();
-
-    }
-
-);
 
 /*=========================================================
   NAVIGATION ACTIVE STATE
