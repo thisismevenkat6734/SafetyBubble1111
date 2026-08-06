@@ -177,22 +177,6 @@ registrationScreen
 
 );
 
-continueButton.addEventListener(
-
-"click",
-
-()=>{
-
-showScreen(
-
-otpScreen
-
-);
-
-}
-
-);
-
 
 /*=========================================================
   SPLASH
@@ -606,14 +590,6 @@ async function registerUser(){
 =========================================================*/
 
 continueButton.removeEventListener("click",()=>{});
-
-continueButton.addEventListener(
-
-    "click",
-
-    registerUser
-
-);
 
 /*=========================================================
   END OF PART 3
